@@ -1,0 +1,40 @@
+[
+    {
+      "id" : 1,
+      "name": "Dashboard",
+      "category": "general",
+      "icon": "src/assets/icons/icon-dark/dashboard-fill.svg"
+    },
+    {
+      "id" : 2,
+      "name": "Team",
+      "category": "general",
+      "icon": "src/assets/icons/icon-dark/team-fill.svg"
+    },
+    {
+      "id" : 7,
+      "name": "Product",
+      "category": "product",
+      "icon": "src/assets/icons/icon-dark/price-tag-fill.svg"
+    },
+    {
+      "id" : 6,
+      "name": "Inventory",
+      "category": "product",
+      "icon": "src/assets/icons/icon-dark/list-check.svg"
+    },
+    {
+      "id" : 4,
+      "name": "Stats",
+      "category": "statistics",
+      "icon": "src/assets/icons/icon-dark/bar-chart-fill.svg"
+    },
+    {
+      "id" : 5,
+      "name": "Logs",
+      "category": "statistics",
+      "icon":"src/assets/icons/icon-light/code-box-fill.svg"
+    }
+
+
+  ]

@@ -1,0 +1,61 @@
+
+.box-profile-top{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    height: 80%;
+    width: 12%;
+    border-radius: var(--border-radius);
+    align-self: center;
+    box-sizing: border-box;
+}
+
+.profile-picture{
+    min-height: 25px;
+    min-width: 25px;
+    align-self: center;
+    border-radius: 50%;
+    background-color: var(--background-color);
+}
+.profile-info{
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+    margin-bottom: auto;
+    justify-content: center;
+    align-content: end;
+    width: 80%;
+    height: 90%;
+    gap: 3px;
+
+}
+.profile-info .name{
+    display: block;
+    font-size: 0.5em;
+    width: 80%;
+}
+.job{
+    display: block;
+    font-size: 0.3em;
+    width: 80%;
+}
+.searchBar{
+    min-height: 20px;
+    min-width: 60%;
+    align-self: center;
+    border: var(--bordersize) var(--third-color) solid;
+    border-radius: var(--border-radius);
+    background: var(--background-color);
+}
+.clock{
+    text-align: center;
+    margin-left: 30px;
+    width: 80px;
+    padding: 4px 10px;
+    font-size: 0.8em;
+    letter-spacing: 1px;
+    align-self: center;
+    border: var(--bordersize) var(--third-color) solid;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}

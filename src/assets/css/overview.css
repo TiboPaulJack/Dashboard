@@ -1,0 +1,164 @@
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr 2fr;
+    grid-gap: 3vh;
+    margin-top: 4vh;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius);
+}
+
+.welcome-banner{
+    display: flex;
+    flex-direction: column;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    padding: 1%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: var(--border-radius);
+    background-color: var(--background-widget);
+}
+    .title-banner{
+        margin: auto;
+    }
+    .welcome-banner span{
+        font-size: 0.8rem;
+        text-align: end;
+        margin-right: 1vw;
+    }
+
+.content-overview{
+    display: grid;
+    grid-gap: 3vh;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 5;
+}
+    .visitors-widget{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        border-radius: var(--border-radius);
+        background-color: var(--background-widget);
+    }
+        .visitors-widget h2, span{
+            text-align: center;
+        }
+
+    .connected-widget{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        border-radius: var(--border-radius);
+        background-color: var(--background-widget);
+
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+        .connected-widget h2, span{
+            text-align: center;
+        }
+
+
+
+    .logger-widget{
+        grid-column-start: 2;
+        grid-column-end: 4;
+        grid-row-start: 2;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        border-radius: var(--border-radius);
+        background-color: var(--third-color);
+        display: flex;
+    }
+    .other-widget{
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        border-radius: var(--border-radius);
+        background-color: var(--background-widget);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+        .other-widget h2{
+            text-align: center;
+        }
+    .other2-widget{
+        grid-column-start: 3;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        border-radius: var(--border-radius);
+        background-color: var(--background-widget-secondary);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+        .other2-widget h2{
+            text-align: center;
+        }
+
+.task-widget__container{
+    height: 80%;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+}
+.task-widget{
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 5;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: var(--border-radius);
+    background-color: var(--background-widget);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow: hidden;
+}
+    .task-widget h2 {
+        text-align: center;
+    }
+    .task-widget__content{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .task-widget__content__item{
+        display: flex;
+        flex-direction: column;
+        border: var(--border-radius);
+        border: 1px solid var(--third-color);
+        border-radius: var(--border-radius);
+        width: 80%;
+        min-height: 20%;
+        margin: auto;
+        justify-content: space-evenly;
+        color: var(--third-color);
+    }
+        .task-widget__content__item h3{
+            margin: 0;
+            text-align: center;
+        }
+        .task-widget__content__item span{
+            margin: 0;
+            font-size: 0.8rem;
+        }
+
+

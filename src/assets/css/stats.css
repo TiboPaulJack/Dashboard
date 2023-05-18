@@ -1,0 +1,40 @@
+.containerStats{
+    margin-top: 4vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    border-radius: var(--border-radius);
+    background-color: var(--background-widget);
+}
+
+.chart{
+    margin: auto;
+    width: 80%;
+    height: 70% !important;
+}
+
+.stats__nav{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+}
+
+.stats__nav select{
+    width: 120px;
+    margin: 0;
+}
+
+.starts__nav-box-span{
+    display: flex;
+    gap: 20px;
+    align-self: center;
+}
+    .starts__nav-box-span span{
+        cursor: pointer;
+    }
+    .starts__nav-box-span span:hover{
+        color: var(--text-contrast-color);
+    }

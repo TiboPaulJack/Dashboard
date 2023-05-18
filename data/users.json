@@ -1,0 +1,53 @@
+[
+    {
+      "name": "Jean Dupont",
+      "role": "admin",
+      "service": "ventes"
+    },
+    {
+      "name": "Marie Martin",
+      "role": "user",
+      "service": "marketing"
+    },
+    {
+      "name": "Pierre Durand",
+      "role": "owner",
+      "service": "RH"
+    },
+    {
+      "name": "Sophie Dubois",
+      "role": "user",
+      "service": "marketing"
+    },
+    {
+      "name": "Lucie Moreau",
+      "role": "admin",
+      "service": "ventes"
+    },
+    {
+      "name": "Antoine Chevalier",
+      "role": "user",
+      "service": "marketing"
+    },
+    {
+      "name": "Pauline Girard",
+      "role": "admin",
+      "service": "RH"
+    },
+    {
+      "name": "Nicolas Leroux",
+      "role": "owner",
+      "service": "ventes"
+    },
+    {
+      "name": "Julie Bernard",
+      "role": "user",
+      "service": "RH"
+    },
+    {
+      "name": "Marc Leblanc",
+      "role": "admin",
+      "service": "marketing"
+    }
+  ]
+
