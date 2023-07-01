@@ -114,3 +114,9 @@ input:checked + .slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+
+
+.title_box-top{
+    text-align: center;
+    margin: auto;
+}

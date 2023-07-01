@@ -1,0 +1,27 @@
+
+
+
+
+.auth_page{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.auth_form{
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    width: 40%;
+    padding: 15vh 5vw;
+    gap: 2vh;
+    box-sizing: border-box;
+    border: 2px solid var(--third-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}

@@ -1,0 +1,16 @@
+
+
+.containerProfile{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: var(--container-height);
+    border-radius: var(--border-radius);
+    background-color: var(--background-widget);
+    box-shadow: var(--box-shadow);
+}
+
+.profile__credentials{
+    width: 40%;
+    margin: 10% auto auto;
+}

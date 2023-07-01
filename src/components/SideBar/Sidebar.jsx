@@ -1,26 +1,28 @@
 import '../../assets/css/sidebar.css'
-import BoxTop from "./TopBox.jsx";
-import NavList from "./NavList.jsx";
-import NavSettings from "./NavSettings.jsx";
-import DarkMode from "./DarkMode.jsx";
+import BoxTop from "./TopBox";
+import NavList from "./NavList";
+import NavSettings from "./NavSettings";
+import DarkModeSwitch from "./DarkModeSwitch";
 
 
-const Sidebar = (props) => {
+const Sidebar = ({ setRendered, onDarkModeToggle }) => {
 
-	const { onComponentSelect, onDarkModeToggle } = props;
 
-	return (
-
-		<div className={"sideBox"}>
-			<BoxTop/>
-			<div className={"sidebar"}>
-				<div className={"top-separation"}/>
-				<NavList onComponentSelect={onComponentSelect}/>
-				<NavSettings/>
-				<DarkMode onDarkModeToggle={onDarkModeToggle}/>
-			</div>
-		</div>
-	)};
+    return (
+      <div className={"sideBox"}>
+          <BoxTop/>
+          <div className={"sidebar"}>
+              <div className={"top-separation"}/>
+              <NavList setRendered={setRendered}/>
+              <NavSettings setRendered={setRendered}/>
+              <DarkModeSwitch onDarkModeToggle={onDarkModeToggle}/>
+          </div>
+      </div>
+    )};
 
 
 export default Sidebar;
+
+
+
+

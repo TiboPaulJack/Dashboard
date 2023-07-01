@@ -1,9 +1,8 @@
 .containerStats{
-    margin-top: 4vh;
     width: 100%;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: var(--container-height);
     justify-content: center;
     border-radius: var(--border-radius);
     background-color: var(--background-widget);

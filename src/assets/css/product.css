@@ -2,11 +2,11 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    margin-top: 4vh;
     width: 100%;
-    height: 100%;
+    height: var(--container-height);
     gap: 20px;
     border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
     box-sizing: border-box;
 
 }
@@ -19,7 +19,6 @@
     height: 100%;
     border-radius: var(--border-radius);
     background-color: var(--background-widget);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .productForm{
@@ -27,7 +26,6 @@
     flex-direction: column;
     width: 100%;
     height: 100%;
-    margin-top: 20px;
     box-sizing: border-box;
     border-radius: var(--border-radius);
     background-color: var(--background-widget);
@@ -84,6 +82,7 @@
 .productForm textarea{
     height: 100px;
     resize: none;
+    margin-bottom: 0;
 }
 .product-discount-date{
 }
@@ -101,14 +100,37 @@ input[type="date"] {
 /*PREVIEW BOX*/
 /*RIGHT SIDE IMAGE*/
 
-.containerPreview{
+.product_right{
     display: flex;
     flex-direction: column;
     width: 60%;
     height: 100%;
+    gap: 2vh;
+}
+
+.containerPreview{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 60%;
     border-radius: var(--border-radius);
     background-color: var(--background-widget);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product_options{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40%;
+    border-radius: var(--border-radius);
+    background-color: var(--background-widget);
+    gap: 2vh;
+}
+
+.product_options_button{
+    height: 50px;
+    cursor: pointer;
 }
 
 .containerPreview__image{
@@ -124,6 +146,11 @@ input[type="date"] {
     width: 50%;
     border: 1px solid var(--third-color);
     border-radius: 5px;
+
+    background-image: url(src/assets/icons/image.png);
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: center;
 }
 .otherImages{
     width: 50%;
@@ -171,6 +198,13 @@ input[type="date"] {
     flex-direction: column;
     margin-left: 5%;
     margin-top: 5%;
+}
+
+.image_slot {
+    background-image: url(src/assets/icons/image.png);
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: center;
 }
 
 

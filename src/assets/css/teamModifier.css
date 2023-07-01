@@ -15,7 +15,7 @@
     width: 0;
     height: 100%;
     border-radius: var(--border-radius);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--box-shadow);
     transition: margin-left 1s, width 0.3s ease-in-out;
     overflow: hidden;
 }
@@ -23,6 +23,7 @@
 
 .visible {
     position: initial;
+    overflow: scroll;
     display: flex;
     width: 50%;
     margin-left: 20px;
@@ -46,7 +47,7 @@ label{
 }
 
 .modifier__credentials h3{
-    margin-top: 0px;
+    margin-top: 0;
 }
 
 .form__credentials{
@@ -108,17 +109,22 @@ label{
 
 /*-----------ACCESS-----------*/
 
-
 .modifier__access{
     display: flex;
     flex-direction: column;
     padding: 0 20px;
     margin-top: 20px;
+    margin-bottom: 60px;
+}
+
+.modifier__access-box-title{
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between;
 }
 
 .access__app-select{
-    width: 20%;
-    align-self: flex-end;
+    width: 22%;
     margin: 0;
 }
 
@@ -148,4 +154,10 @@ label{
 
 }
 
-
+@media (max-width: 501px) {
+    .visible{
+        width: 100%;
+        margin-left: 0;
+        transition: none;
+    }
+}
