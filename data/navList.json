@@ -31,7 +31,7 @@
     },
     {
       "id" : 5,
-      "name": "Logs",
+      "name": "Tasks",
       "category": "statistics",
       "icon":"src/assets/icons/icon-light/code-box-fill.svg"
     }

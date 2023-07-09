@@ -31,9 +31,9 @@
     gap: 20px;
     align-self: center;
 }
-    .starts__nav-box-span span{
-        cursor: pointer;
-    }
-    .starts__nav-box-span span:hover{
-        color: var(--text-contrast-color);
-    }
+.starts__nav-box-span span{
+    cursor: pointer;
+}
+.starts__nav-box-span span:hover{
+    color: var(--text-contrast-color);
+}

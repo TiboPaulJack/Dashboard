@@ -14,18 +14,26 @@
     flex-direction: column;
     grid-column-start: 1;
     grid-column-end: 3;
-    padding: 1%;
+    padding: 5px;
     box-shadow: var(--box-shadow);
+    box-sizing: border-box;
     border-radius: var(--border-radius);
+    background: var(--hero-svg);
     background-color: var(--background-widget);
+    background-size: contain;
+    background-position: center;
 }
     .title-banner{
-        margin: auto;
+        display: flex;
+        margin-top: 100px;
+        margin-left: 18px;
+        font-size: 1.5rem;
+
     }
     .welcome-banner span{
         font-size: 0.8rem;
-        text-align: end;
-        margin-right: 1vw;
+        align-self: flex-end;
+        margin-top: auto;
     }
 
 .content-overview{
@@ -109,54 +117,41 @@
             text-align: center;
         }
 
-.task-widget__container{
-    height: 80%;
-    width: 80%;
-    margin: auto;
+
+.task-widget{
     display: flex;
     flex-direction: column;
-    overflow: scroll;
-}
-.task-widget{
     grid-column-start: 3;
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 5;
-    box-shadow: var(--box-shadow);
-    border-radius: var(--border-radius);
-    background-color: var(--background-widget);
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    overflow: hidden;
+
 }
-    .task-widget h2 {
-        text-align: center;
-    }
-    .task-widget__content{
+
+    .task-widget__container{
         display: flex;
         flex-direction: column;
+        height: 100%;
+        width: 100%;
+        margin: auto;
         gap: 20px;
     }
-    .task-widget__content__item{
-        display: flex;
-        flex-direction: column;
-        border: var(--border-radius);
-        border: 1px solid var(--third-color);
-        border-radius: var(--border-radius);
-        width: 80%;
-        min-height: 20%;
-        margin: auto;
-        justify-content: space-evenly;
-        color: var(--third-color);
-    }
-        .task-widget__content__item h3{
-            margin: 0;
-            text-align: center;
+        .task-widget__container-top{
+            height: 50%;
+            box-shadow: var(--box-shadow);
+            border-radius: var(--border-radius);
+            background-color: var(--background-widget);
+            overflow: hidden;
+
         }
-        .task-widget__content__item span{
-            margin: 0;
-            font-size: 0.8rem;
+        .task-widget__container-bottom{
+            height: 50%;
+            box-shadow: var(--box-shadow);
+            border-radius: var(--border-radius);
+            background-color: var(--background-widget);
+            overflow: auto;
         }
+
+
 
 

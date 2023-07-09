@@ -3,7 +3,7 @@ import NavList from "../SideBar/NavList.js";
 import NavItem from "../SideBar/NavItem.js";
 
 
-export default function MobileNav({ setRendered }) {
+export default function MobileNav({ setRendered, onDarkModeToggle }) {
     return (
       <div className={"mobileNav"}>
           <NavList setRendered={setRendered}>

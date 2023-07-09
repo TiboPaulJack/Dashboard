@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function DarkModeSwitch ({ onDarkModeToggle }) {
+export default function DarkModeSwitch ({ onDarkModeToggle, updateTheme }) {
 
 		const [isChecked, setIsChecked] = useState(false);
 
@@ -9,8 +9,10 @@ export default function DarkModeSwitch ({ onDarkModeToggle }) {
 				if (currentTheme) {
 						document.documentElement.setAttribute("data-theme", currentTheme);
 						setIsChecked(currentTheme === "dark")
+						updateTheme(currentTheme);
+
 				}
-			}, []);
+			}, [isChecked]);
 
 		const handleDarkModeChange = (event) => {
 				const isChecked = event.target.checked;

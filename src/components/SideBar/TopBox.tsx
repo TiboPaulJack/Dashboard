@@ -3,7 +3,7 @@ const BoxTop = () => {
 			<>
 					<div className={"box-top"}>
 					<div className="logo">
-						<h1 className={"title_box-top"}>Dashboard</h1>
+						<h1 className={"title_box-top"}></h1>
 					</div>
 					</div>
 			</>

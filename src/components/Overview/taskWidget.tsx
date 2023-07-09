@@ -1,38 +1,22 @@
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import {DateCalendar} from "@mui/x-date-pickers";
+import CheckboxListSecondary from "../CheckBoxReminderList/CheckBoxList";
 
 
-
-const TaskWidget =  () => {
+export default function TaskWidget  () : JSX.Element  {
 	
 	
 		return (
 			<div className={"task-widget"}>
-					<h2 className={ "section__title" }>Activity</h2>
 				<div className={"task-widget__container"}>
-					<div className={ "task-widget__content" }>
-						<div className={ "task-widget__content__item" }>
-							<h3>Title</h3>
-							<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet beatae cupiditate dolores fugit laboriosam laborum nisi praesentium quasi, repudiandae, sit, unde vitae!</span>
-						</div>
-						<div className={ "task-widget__content__item" }>
-							<h3>Title</h3>
-							<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet beatae cupiditate dolores fugit laboriosam laborum nisi praesentium quasi, repudiandae, sit, unde vitae!</span>
-						</div>
-						<div className={ "task-widget__content__item" }>
-							<h3>Title</h3>
-							<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet beatae cupiditate dolores fugit laboriosam laborum nisi praesentium quasi, repudiandae, sit, unde vitae!</span>
-						</div>
-						<div className={ "task-widget__content__item" }>
-							<h3>Title</h3>
-							<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet beatae cupiditate dolores fugit laboriosam laborum nisi praesentium quasi, repudiandae, sit, unde vitae!</span>
-						</div>
-						<div className={ "task-widget__content__item" }>
-							<h3>Title</h3>
-							<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet beatae cupiditate dolores fugit laboriosam laborum nisi praesentium quasi, repudiandae, sit, unde vitae!</span>
-						</div>
-						<div className={ "task-widget__content__item" }>
-							<h3>Title</h3>
-							<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet beatae cupiditate dolores fugit laboriosam laborum nisi praesentium quasi, repudiandae, sit, unde vitae!</span>
-						</div>
+					<div className={"task-widget__container-top"}>
+						<LocalizationProvider dateAdapter={AdapterDayjs}>
+							<DateCalendar/>
+						</LocalizationProvider>
+					</div>
+					<div className={"task-widget__container-bottom"}>
+						<CheckboxListSecondary/>
 					</div>
 				</div>
 				
@@ -40,4 +24,3 @@ const TaskWidget =  () => {
 		)
 }
 
-export default TaskWidget;

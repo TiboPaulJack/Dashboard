@@ -1,11 +1,26 @@
-const SearchBar = () => {
+import {TextField} from "@mui/material";
+
+
+export default function SearchBar  () : JSX.Element {
 		return(
-			<input
-				className={"searchBar"} type="text"
+			<TextField
+				id="outlined-basic"
+				variant="outlined"
 				placeholder="Search..."
+				sx={{
+					alignSelf: 'center',
+					'& .MuiOutlinedInput-root': {
+						borderRadius: '15px',
+					},
+					'& .MuiOutlinedInput-input::placeholder': {
+						fontSize: '12px', // Change this to your desired font size
+					},
+					width: '400px',
+				}}
 			/>
+
+
 		)
 }
 
 
-export default SearchBar;

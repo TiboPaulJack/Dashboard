@@ -26,6 +26,7 @@
     --background-color: #cccdd1;
     --text-contrast-color: white;
     --transition-background: background-color 0.2s linear, color 0.1s ease ;
+    --hero-svg:url("/src/assets/bg/World Map.svg");
 }
 
 /***********DARK*MODE*************/
@@ -36,6 +37,7 @@
     --background-widget-secondary:#586a1b;
     --third-color: #888e90;
     --text-contrast-color: black;
+    --hero-svg:url("/src/assets/bg/World Map-night.svg");
 }
 
 

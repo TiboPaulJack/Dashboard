@@ -1,10 +1,10 @@
 import {useState} from "react";
 import "../../assets/css/teamMgmt.css"
-import Table from "./Table";
 import Modifier from "./Modifier";
+import TeamTable from "./TeamTable";
 
 
-export default function TeamMgmt ()  {
+export default function TeamMgmt () : JSX.Element  {
 
 
     const [visible, setVisible] = useState(false);
@@ -12,7 +12,7 @@ export default function TeamMgmt ()  {
 
     return(
       <div className={"containerTeam"}>
-          <Table
+          <TeamTable
               setVisible={setVisible}
               visible={visible}
           />

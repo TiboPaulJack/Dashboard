@@ -1,7 +1,7 @@
 import "../../assets/css/stats.css"
 import StackedLineChart from "./StackedLineChart";
 
-export default function Stats() {
+export default function Stats(): JSX.Element {
 
   return (
     <div className="containerStats">

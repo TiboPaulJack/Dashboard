@@ -2,7 +2,7 @@ import ReactECharts from 'echarts-for-react';
 
 const StackedLineChart = () => {
 
-  const options = {
+  const options : any = {
     grid: { top: 8, right: 8, bottom: 24, left: 36 },
     xAxis: {
       type: 'category',

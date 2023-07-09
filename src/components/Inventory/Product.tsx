@@ -2,10 +2,9 @@
 
 
 
-
-const Product = (props) => {
+export default function Product(props) : JSX.Element  {
   const handleClick = () => {
-    props.setVisible(true); /* Utilisation de la fonction setVisible passée en tant que prop */
+    props.setVisible(true);
   };
   
   const {name, role, service} = props;
@@ -29,4 +28,3 @@ const Product = (props) => {
   );
 };
 
-export default Product;

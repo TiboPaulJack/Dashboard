@@ -4,7 +4,7 @@ const WelcomeBanner = () => {
 		const timeStr = time.toLocaleTimeString()
 		return (
 			<div className={"welcome-banner card"}>
-					<h1 className={"title-banner"}>Welcome User</h1>
+					<h1 className={"title-banner"}>Welcome Thibault</h1>
 					<span>Last connected {dateStr} {timeStr}</span>
 			</div>
 
