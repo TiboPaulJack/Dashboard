@@ -1,163 +1,38 @@
 
-.modifier .close{
-    display: block;
-    width: fit-content;
-    align-self: flex-end;
-    margin-right: 20px;
-    margin-top: 20px;
-    margin-bottom: 0;
-}
+
 .modifier {
+    box-sizing: border-box;
     position: relative;
     background-color: var(--background-widget);
     display: flex;
     flex-direction: column;
+    gap: 10px;
     width: 0;
     height: 100%;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
-    transition: margin-left 1s, width 0.3s ease-in-out;
+    transition: padding 0.3s, width 0.3s ease-in-out;
     overflow: hidden;
 }
 
-
 .visible {
+    box-sizing: border-box;
     position: initial;
     overflow: scroll;
     display: flex;
-    width: 50%;
-    margin-left: 20px;
+    width: 70%;
     transition: width 0.3s ease-in-out;
-
-}
-
-label{
-    font-size: 0.7rem;
-    font-weight: bold;
-    margin-bottom: 4px;
-}
-
-/*-----------CREDENTIALS-----------*/
-
-
-.modifier__credentials{
-    display: flex;
-    flex-direction: column;
-    padding: 0 20px;
-}
-
-.modifier__credentials h3{
-    margin-top: 0;
-}
-
-.form__credentials{
-    display: flex;
-    flex-direction: column;
-}
-.form__credentials input{
-    width: 100%;
-    border-radius: var(--border-radius);
-    background-color: var(--third-color);
-    box-sizing: border-box;
-    margin-bottom: 20px;
-    height: 2em;
-    border: none;
-}
-
-/*Button submit form*/
-.save__credentials{
-    border-radius: var(--border-radius);
-    background-color: var(--third-color);
-    color: var(--text-contrast-color);
-    border: none;
-    cursor: pointer;
-    font-size: 0.7rem;
-    padding: 10px;
-}
-
-.save__credentials:hover{
-    background-color: var(--confirm-color) !important;
 }
 
 
-.credentials__options{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 10px;
-}
-
-.credentials__options button{
-    border-radius: var(--border-radius);
-    background-color: var(--third-color);
-    color: var(--text-contrast-color);
-    border: none;
-    cursor: pointer;
-    font-size: 0.7rem;
-    padding: 10px;
-    width: 40%;
-}
-
-.delete__account:hover{
-    background-color: var(--danger-color) !important;
-}
-
-
-
-
-
-/*-----------ACCESS-----------*/
-
-.modifier__access{
-    display: flex;
-    flex-direction: column;
-    padding: 0 20px;
-    margin-top: 20px;
-    margin-bottom: 60px;
-}
-
-.modifier__access-box-title{
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: space-between;
-}
-
-.access__app-select{
-    width: 22%;
-    margin: 0;
-}
-
-.access__legend{
-    justify-self: flex-start;
-}
-
-.modifier__access div{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10px;
-}
-
-.access__section{
-    display: flex;
-    flex-direction:row;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 10px;
-    width: 80%;
-}
-
-.access__box-radio{
-    border: 1px solid black;
-    padding: 10px;
-
-}
 
 @media (max-width: 501px) {
     .visible{
         width: 100%;
         margin-left: 0;
         transition: none;
+    }
+    .hidden{
+        display: none;
     }
 }

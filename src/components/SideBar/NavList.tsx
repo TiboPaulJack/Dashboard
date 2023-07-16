@@ -4,7 +4,9 @@ import data from "../../../data/navList.json";
 import NavItem from "./NavItem";
 
 
-const NavList = ({ setRendered, children }) => {
+export default function NavList  ({ children })  {
+
+
 
 
 		const navItems = data.map((item) =>
@@ -12,7 +14,6 @@ const NavList = ({ setRendered, children }) => {
 					key={item.id}
 				 	title={item.name}
 				 	icon={item.icon}
-					setRendered={setRendered}
 				/>
 		);
 
@@ -22,7 +23,6 @@ const NavList = ({ setRendered, children }) => {
 		</>;
 };
 
-export default NavList;
 
 
 

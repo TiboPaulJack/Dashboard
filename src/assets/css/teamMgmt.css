@@ -3,172 +3,41 @@
 .containerTeam{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
     width: 100%;
+    gap: 0 ;
+    box-sizing: border-box;
     height: var(--container-height);
     border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
+    transition: gap 0.3s ease-in-out;
 }
 
-.listing{
-    display: flex;
+.containerTeam h2{
+    padding-top: 20px;
+}
+
+.team__table{
     flex-direction: column;
-    background-color: var(--background-widget);
+    box-sizing: border-box;
+    padding: 0 20px 20px;
     width: 100%;
     height: 100%;
+    background-color: var(--background-widget);
     border-radius: var(--border-radius);
-}
-/***********TABLE***********/
-
-.list{
-    width: 90%;
-    padding: 2% 5% 5% 5%;
-    height: 80%;
-}
-
-.member-list{
-    overflow: scroll;
-    height: 85%;
-    width: 100%;
-    background-color: inherit;
-    box-sizing: border-box;
-}
-
-.list-header{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    height: 10%;
-    border-radius: 10px;
-    margin-bottom: 45px;
-    background-color: var(--background-color);
     box-shadow: var(--box-shadow);
 }
 
-.list-col{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    width: 100px;
-    height: 100%;
+.teamGap{
+    gap: 20px;
 }
 
-.list-row{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    font-size: 0.8em;
-    width: 100%;
-    height: 2rem;
-    border: var(--background-color) solid 1px;);
-    border-radius: 10px;
-    margin-bottom: 20px;
-    background-color: var(--background-widget);
-    box-shadow: 0 5px 2px rgba(0, 0, 0, 0.2);
+.table__container{
+    height: 87%;
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
     box-sizing: border-box;
-}
-
-.list-col-name{
-    width: 150px;
-}
-
-.list-col button{
-    background: var(--background-color);
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.btn.btn-edit{
-    border: gray 1px solid;
-    font-size: 0.9em;
-    background-color: transparent;
-
-}
-
-
-
-
-@media (max-width: 501px) {
-    .list-col-name{
-        width: 100px;
-    }
-    .list-row{
-        height: 10%;
-    }
-    .hidden{
-        display: none;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-/***********INPUT SLIDER***********/
-
-.status-switch-wrapper {
-    display: flex;
-    width: 100px;
-    justify-content: center;
-}
-
-.member-switch {
-    display: inline-block;
-    height: 20px;
-    position: relative;
-    width: 40px;
     margin: auto;
 }
 
-.member-switch input {
-    display:none;
-}
-
-.statusSlider {
-    background-color: #ccc;
-    bottom: 0;
-    cursor: pointer;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transition: .4s;
-}
-
-.statusSlider:before {
-    background-color: #fff;
-    bottom: 4px;
-    content: "";
-    height: 12px;
-    left: 4px;
-    position: absolute;
-    transition: .4s;
-    width: 12px;
-}
-
-input:checked + .statusSlider {
-    background-color: var(--background-widget-secondary);
-}
-
-input:checked + .statusSlider:before {
-    transform: translateX(20px);
-}
-
-.statusSlider.round {
-    border-radius: 34px;
-}
-
-.statusSlider.round:before {
-    border-radius: 50%;
+.table__head{
+    background-color: var(--third-color);
 }

@@ -13,7 +13,7 @@
     --container-height:calc(100% - 70px - 4vh);
     --container-height-mobile:calc(100% - 140px);
     --background-widget:#E6E8EC;
-    --background-widget-secondary: rgba(177, 240, 66, 0.87);
+    --background-widget-secondary: #ADD0C0;
     --border-radius-bar: 2px;
     --blue-matisse: #245FA0;
     --confirm-color: #9CF332;
@@ -34,8 +34,8 @@
     --background-color: #2f302f;
     --text-color:#eff0f4;
     --background-widget: #545554;
-    --background-widget-secondary:#586a1b;
-    --third-color: #888e90;
+    --background-widget-secondary: #8ea198;
+    --third-color: #3d3d3d;
     --text-contrast-color: black;
     --hero-svg:url("/src/assets/bg/World Map-night.svg");
 }
@@ -46,7 +46,6 @@ ul, li, a{
     list-style: none;
     padding: 0;
     margin: 0;
-    transition: 2s ;
 }
 button{
     transition: background-color 0.3s ease-in-out !important;
@@ -103,7 +102,7 @@ main{
     width: 100%;
     min-height: 70px;
     box-shadow: var(--box-shadow);
-    border-radius: var(--border-radius-bar);
+    border-radius: var(--border-radius);
     background-color: var(--background-widget);
 }
 .sideBox{
@@ -118,30 +117,20 @@ main{
     flex-direction: column;
     width: 100%;
     align-self: end;
-    height: var(--container-height);
+    height: 100%;
     box-shadow: var(--box-shadow);
-    border-radius: var(--border-radius-bar);
+    border-radius: var(--border-radius);
     background-color: var(--background-widget);
     overflow: hidden;
 }
-.header{
-    flex-direction: column;
-    justify-content: space-around;
-    width: 100%;
-    height: calc(8vh);
-    box-shadow: var(--box-shadow);
-    border-radius: var(--border-radius-bar);
-    background-color: var(--background-widget);
-}
-.box-top{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    font-family: 'Rajdhani', sans-serif;
-    width: 100%;
-    min-height: 70px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    border-radius: var(--border-radius-bar);
-    background-color: var(--background-widget);
+
+
+.css-1dfiwb5-MuiButtonBase-root-MuiButton-root:hover{
+    background-color: var(--background-widget-secondary) !important;
+
 }
 
+.css-19iex7o-MuiButtonBase-root-MuiButton-root:hover{
+    background-color: var(--third-color) !important;
+
+}

@@ -1,17 +1,10 @@
 
-.box-top-title{
-    font-family: 'cinzel decorative', serif;
-    font-size: 1.2em;
-    text-align: center;
-    margin-top: 22px;
-    color: var(--text-color);
-}
+
 .top-separation{
     width: 80%;
     margin: auto auto 25px;
     height: 2px;
-    background-color:
-            var(--third-color);
+    background-color: var(--third-color);
 
 }
 .NavItem{
@@ -44,8 +37,7 @@
     width: 80%;
     margin: auto auto 25px;
     height: 2px;
-    background-color:
-            var(--third-color);
+    background-color: var(--third-color);
 
 }
 .settings{

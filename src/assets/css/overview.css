@@ -5,8 +5,9 @@
     grid-template-rows: 1fr 2fr;
     grid-gap: 3vh;
     width: 100%;
-    height: 87.5%;
+    height: 100%;
     border-radius: var(--border-radius);
+    overflow: hidden;
 }
 
 .welcome-banner{
@@ -20,6 +21,7 @@
     border-radius: var(--border-radius);
     background: var(--hero-svg);
     background-color: var(--background-widget);
+    background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
 }
@@ -28,8 +30,8 @@
         margin-top: 100px;
         margin-left: 18px;
         font-size: 1.5rem;
-
     }
+
     .welcome-banner span{
         font-size: 0.8rem;
         align-self: flex-end;
@@ -125,12 +127,15 @@
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 5;
+    box-sizing: border-box;
 
 }
 
     .task-widget__container{
         display: flex;
         flex-direction: column;
+        box-sizing: border-box;
+        
         height: 100%;
         width: 100%;
         margin: auto;
@@ -138,6 +143,7 @@
     }
         .task-widget__container-top{
             height: 50%;
+            max-height: 50%;
             box-shadow: var(--box-shadow);
             border-radius: var(--border-radius);
             background-color: var(--background-widget);
@@ -146,10 +152,16 @@
         }
         .task-widget__container-bottom{
             height: 50%;
-            box-shadow: var(--box-shadow);
-            border-radius: var(--border-radius);
-            background-color: var(--background-widget);
+            box-sizing: border-box;
             overflow: auto;
+        }
+        .task-widget__container-bottom-empty{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            height: 100%;
+            border: var(--background-widget) 3px solid;;
         }
 
 

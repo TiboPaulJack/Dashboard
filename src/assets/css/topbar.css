@@ -47,14 +47,22 @@
     font-size: 0.3em;
     text-align: center;
 }
-.searchBar{
+
+
+/*.searchBar{
     min-height: 20px;
     min-width: 40%;
     align-self: center;
     border: var(--bordersize) var(--third-color) solid;
     border-radius: var(--border-radius);
     background: var(--background-color);
+}*/
+
+.searchResults{
+
 }
+
+
 .clock{
     display: flex;
     justify-content: center;

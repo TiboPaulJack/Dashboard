@@ -37,6 +37,7 @@
     }
     .container {
         grid-template-rows: 1fr 2fr;
+        overflow: scroll !important;
     }
     .navItem{
         width: 100%;

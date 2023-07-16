@@ -1,7 +1,4 @@
 
-
-
-
 .auth_page{
     display: flex;
     flex-direction: column;
@@ -9,19 +6,43 @@
     width: 100vw;
     justify-content: center;
     align-items: center;
+    background-color: #2f302f;
+}
 
+.auth_title{
+    margin: auto auto;
+    letter-spacing: 5px;
+    margin-bottom: auto;
+}
+
+.help_lost{
+    font-size: 12px;
+    cursor: pointer;
+    color: black;
+}
+.help_lost:hover{
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 768px){
+
+
+    .auth_container{
+        width: 95% !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden !important;
+    }
+
+    .auth_form{
+        width: 80% !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 
-.auth_form{
-    display: flex;
-    margin: auto;
-    flex-direction: column;
-    width: 40%;
-    padding: 15vh 5vw;
-    gap: 2vh;
-    box-sizing: border-box;
-    border: 2px solid var(--third-color);
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-}

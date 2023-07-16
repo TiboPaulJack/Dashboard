@@ -1,81 +1,47 @@
 import '../assets/css/app.css'
 import '../assets/css/mediaQueries.css'
-import Sidebar from "./SideBar/Sidebar.jsx";
-import TopBar from "./TopBar/TopBar";
-import DisplayedComponent from "./DisplayedComponent";
-import handleDarkModeToggle from "../assets/js/darkMode.js";
-import {useEffect, useLayoutEffect, useState} from "react";
-import Overview from "./Overview/Overview";
-import TeamMgmt from "./TeamManagement/TeamMgmt";
-import Product from "./Product/Product";
-import Inventory from "./Inventory/Inventory";
-import Stats from "./Stats/Stats";
-import Tasks from "./Tasks/Tasks";
-import Profile from "./Profile/Profile";
-import Settings from "./Settings/Settings";
-import MobileNav from "./MobileNav/MobileNav";
+import {useEffect} from "react";
 import {ThemeProvider} from "@mui/material/styles";
-import {darkTheme, lightTheme} from "../assets/js/muyStyles";
+import {darkTheme, lightTheme} from "../assets/js/muiStyles";
+import Auth from "./auth/auth";
+import {useDispatch, useSelector} from "react-redux";
+import {RootState} from "../redux/store";
+import {setDarkTheme, setLightTheme} from "../redux/reducers/config";
+import {BrowserRouter, Route, Routes, Outlet} from "react-router-dom";
+import Dashboard from "./Dashboard";
 
 
 
 export default function App(): JSX.Element {
 
-    const [theme, setTheme] = useState('');
-    const [rendered, setRendered] = useState("Dashboard")
-    const themeObject = theme === 'dark' ? darkTheme : lightTheme;
 
+    const dispatch = useDispatch();
+    const theme = useSelector((state : RootState) => state.config.theme);
+    const loggedIn = useSelector((state : RootState) => state.auth.isLogged);
+    let themeObject = theme === 'dark' ? darkTheme : lightTheme;
 
-    const updateTheme = (theme: string) => {
-        setTheme(theme);
-        console.log(theme);
-    }
 
     useEffect(() => {
         const storedTheme = localStorage.getItem('theme');
         if (storedTheme === 'dark') {
-            setTheme('dark');
+            dispatch(setDarkTheme());
         } else {
-            setTheme('light');
+            dispatch(setLightTheme());
         }
-    });
-
+    }, []);
 
 
     return (
-            <ThemeProvider theme={themeObject}>
-                <div className={"app"}>
-                    <Sidebar
-                        setRendered={setRendered}
-                        onDarkModeToggle={handleDarkModeToggle}
-                        updateTheme={updateTheme}
-                    />
-                    <main>
-                        <TopBar/>
-                        <MobileNav
-                            setRendered={setRendered}
-                            onDarkModeToggle={handleDarkModeToggle}
-                        />
-                        <DisplayedComponent rendered={rendered} >
-                            {rendered === "Dashboard" && <Overview />}
-                            {rendered === "Team" && <TeamMgmt />}
-                            {rendered === "Product" && <Product />}
-                            {rendered === "Inventory" && <Inventory />}
-                            {rendered === "Stats" && <Stats />}
-                            {rendered === "Tasks" && <Tasks />}
-                            {rendered === "Profile" && <Profile />}
-                            {rendered === "Settings" && <Settings />}
-                        </DisplayedComponent>
-                    </main>
-                </div>
-            </ThemeProvider>
-		)
-};
+        <ThemeProvider theme={themeObject}>
+            <BrowserRouter>
+                <Routes>
+                    {!loggedIn && <Route path="/*" element={<Auth />} />}
+                    {loggedIn && (
+                        <Route path="/*" element={<Dashboard />} />
+                    )}
+                </Routes>
+            </BrowserRouter>
+        </ThemeProvider>
+    );
 
-
-
-
-
-
-
-
+}

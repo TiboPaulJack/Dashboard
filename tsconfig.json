@@ -1,0 +1,10 @@
+
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "jsx": "react-jsx",
+    "lib": ["ES2022", "DOM"],
+
+  }
+}

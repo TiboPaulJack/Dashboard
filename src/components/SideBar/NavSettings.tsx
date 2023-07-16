@@ -1,14 +1,17 @@
 import NavItem from "./NavItem";
 import {useNavigate} from "react-router-dom";
+import {useDispatch} from "react-redux";
+import {logOut} from "../../redux/reducers/auth";
 
 
 
 const NavSettings = ({setRendered}) => {
 
-		const navigate = useNavigate()
+		const dispatch = useDispatch()
+		const navigate = useNavigate();
 
 		const handleLogout = () => {
-			navigate('/auth')
+			dispatch(logOut())
 		}
 
 		return (
@@ -17,17 +20,14 @@ const NavSettings = ({setRendered}) => {
 					<NavItem key={"Account"}
 									 title={"Profile"}
 									 icon={"src/assets/icons/icon-dark/user-fill.svg"}
-									 setRendered={setRendered}
 					/>
 					<NavItem key={"settings"}
 									 title={"Settings"}
 									 icon={"src/assets/icons/icon-dark/settings-4-fill.svg"}
-									 setRendered={setRendered}
 					/>
 					<NavItem key={"logout"}
 									 title={"Logout"}
 									 icon={"src/assets/icons/icon-dark/logout-circle-line.svg"}
-									 setRendered={handleLogout}
 
 					/>
 			</div>

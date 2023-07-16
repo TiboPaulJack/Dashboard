@@ -32,7 +32,7 @@ const StatsOnlineWidget = () => {
 		return (
 			<div className={"connected-widget card"}>
 					<h2>548</h2>
-					<span>Now connected</span>
+					<span>Sells today</span>
 
 			</div>
 		)

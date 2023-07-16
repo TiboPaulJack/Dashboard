@@ -5,7 +5,17 @@ const padding = '10px';
 const borderRadius = '5px';
 
 const textFieldStyles = {
+
     components: {
+        MuiButton: {
+            styleOverrides: {
+                root: {
+                   ' &:hover': {
+                        backgroundColor: '#ADD0C0',
+                    },
+                },
+            },
+        },
         MuiInputBase: {
             styleOverrides: {
                 input: {
@@ -15,7 +25,6 @@ const textFieldStyles = {
                 },
             },
         },
-
         MuiSelect: {
             styleOverrides: {
                 select: {
