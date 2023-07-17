@@ -1,4 +1,4 @@
-import '../../../public/css/product.css'
+import '../../assets/css/product.css'
 import Form from "./form";
 import ImagesForm from "./ImagesForm";
 import Recap from "./Recap";

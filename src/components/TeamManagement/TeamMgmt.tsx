@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import "../../../public/css/teamMgmt.css"
+import "../../assets/css/teamMgmt.css"
 import Modifier from "./Modifier";
 import TeamTable from "./TeamTable";
 import {useDispatch, useSelector} from "react-redux";

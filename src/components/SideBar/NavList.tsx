@@ -4,7 +4,7 @@ import data from "../../../data/navList.json";
 import NavItem from "./NavItem";
 
 
-export default function NavList  ()  {
+export default function NavList  ({children}: {children: React.ReactNode})  {
 
 
 
@@ -20,7 +20,7 @@ export default function NavList  ()  {
 return (
 		<div className="navList">
 			{navItems}
-
+			{children}
 		</div>
 )
 };
