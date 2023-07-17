@@ -1,4 +1,4 @@
-import '../../../dist/assets/css/mobileNav.css'
+import '../../../public/css/mobileNav.css'
 import NavList from "../SideBar/NavList.js";
 import NavItem from "../SideBar/NavItem.js";
 

@@ -1,4 +1,4 @@
-import "../../../dist/assets/css/inventory.css"
+import "../../../public/css/inventory.css"
 import InventoryTable from "./InventoryTable";
 import {useEffect} from "react";
 import {getAllProducts} from "../../api/product";

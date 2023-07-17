@@ -1,4 +1,4 @@
-import "../../../dist/assets/css/tasks.css"
+import "../../../public/css/tasks.css"
 import Header from "./Header";
 import TasksTable from "./TasksTable";
 import Form from "./Form";

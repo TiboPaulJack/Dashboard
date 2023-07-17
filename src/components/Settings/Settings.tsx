@@ -1,4 +1,4 @@
-import '../../../dist/assets/css/settings.css'
+import '../../../public/css/settings.css'
 
 
 

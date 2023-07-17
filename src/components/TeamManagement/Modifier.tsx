@@ -1,4 +1,4 @@
-import "../../../dist/assets/css/teamModifier.css"
+import "../../../public/css/teamModifier.css"
 import { Button, FormControl, Grid, InputLabel, MenuItem, Select, TextField} from "@mui/material";
 import {Box} from "@mui/system";
 import {useDispatch, useSelector} from "react-redux";

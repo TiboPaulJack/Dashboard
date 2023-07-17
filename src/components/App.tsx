@@ -1,8 +1,8 @@
-import '../../dist/assets/css/app.css'
-import '../../dist/assets/css/mediaQueries.css'
+import '../../public/css/app.css'
+import '../../public/css/mediaQueries.css'
 import {useEffect} from "react";
 import {ThemeProvider} from "@mui/material/styles";
-import {darkTheme, lightTheme} from "../../dist/assets/mui/muiStyles";
+import {darkTheme, lightTheme} from "../../public/mui/muiStyles";
 import Auth from "./auth/auth";
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../redux/store";

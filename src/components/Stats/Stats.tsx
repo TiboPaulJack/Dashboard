@@ -1,4 +1,4 @@
-import "../../../dist/assets/css/stats.css"
+import "../../../public/css/stats.css"
 import StackedLineChart from "./StackedLineChart";
 
 export default function Stats(): JSX.Element {

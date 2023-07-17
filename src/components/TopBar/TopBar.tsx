@@ -1,4 +1,4 @@
-import '../../../dist/assets/css/topbar.css'
+import '../../../public/css/topbar.css'
 import SearchBar from './Search'
 import BoxProfile from './Profile'
 import IconBar from './Clock'

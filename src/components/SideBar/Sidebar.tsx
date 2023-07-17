@@ -1,4 +1,4 @@
-import '../../../dist/assets/css/sidebar.css'
+import '../../../public/css/sidebar.css'
 import NavList from "./NavList";
 import NavSettings from "./NavSettings";
 import DarkModeSwitch from "./DarkModeSwitch";

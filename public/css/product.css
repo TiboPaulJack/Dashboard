@@ -83,7 +83,7 @@
 }
 
 .image{
-    background-image: url("/dist/assets/bg/img_placeholder.png");
+    background-image: url("/public/bgplaceholder.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
