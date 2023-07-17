@@ -5,7 +5,6 @@ const padding = '10px';
 const borderRadius = '5px';
 
 const textFieldStyles = {
-
     components: {
         MuiButton: {
             styleOverrides: {
