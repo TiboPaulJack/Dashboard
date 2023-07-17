@@ -95,16 +95,7 @@ main{
     margin-left: 45px;
     font-size: 1.4rem;
 }
-.topBar{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    min-height: 8vh;
-    box-shadow: var(--box-shadow);
-    border-radius: var(--border-radius);
-    background-color: var(--background-widget);
-}
+
 .sideBox{
     display: flex;
     flex-direction: column;

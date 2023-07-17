@@ -72,11 +72,38 @@ export default function SearchBar() {
 					setSearchValue(newInputValue);
 					handleSearch(searchValue);
 				}}
-				sx={{width: 300, alignSelf: 'center'}}
+				sx={{
+					width: 400,
+					alignSelf: 'center',
+					backgroundColor: 'var(--background-color)',
+					borderRadius:'10px'
+				}}
 				renderInput={(params) => (
 					<TextField
 						{...params}
-						InputProps={{...params.InputProps, type: 'search'}}
+						InputProps={{
+							...params.InputProps,
+							type: 'search',
+							disableOutline: true,
+							sx: {
+								borderRadius: '10px', // border radius à l'état normal
+								'& fieldset': {
+									borderColor: 'transparent',
+								},
+								'&:hover': {
+									borderRadius: '10px', // border radius au hover
+									'fieldset': {
+										borderColor: 'transparent',
+									}
+								},
+								'&.Mui-focused': {
+									borderRadius: '10px', // border radius lorsqu'il est focus
+									'fieldset': {
+										borderColor: 'transparent',
+									},
+								},
+							},
+						}}
 						label="Search.."
 					/>
 				)}

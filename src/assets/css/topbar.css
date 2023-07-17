@@ -1,4 +1,15 @@
 
+.topBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 8vh;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    background-color: var(--background-widget);
+}
+
 .box-profile-top{
     display: flex;
     flex-direction: row;
@@ -8,8 +19,9 @@
     align-self: center;
     box-sizing: border-box;
     border: 1px var(--third-color) solid;
-    border-radius: 15px;
+    border-radius: 10px;
     cursor: pointer;
+    background-color: var(--background-color);
     padding: 10px;
     margin-right: 30px;
 }
@@ -18,12 +30,13 @@
 }
 
 
+
 .profile-picture{
     min-height: 25px;
     min-width: 25px;
     align-self: center;
     border-radius: 50%;
-    background-color: var(--background-color);
+    background-color: var(--background-widget);
 }
 .profile-info{
     display: flex;
@@ -49,19 +62,6 @@
 }
 
 
-/*.searchBar{
-    min-height: 20px;
-    min-width: 40%;
-    align-self: center;
-    border: var(--bordersize) var(--third-color) solid;
-    border-radius: var(--border-radius);
-    background: var(--background-color);
-}*/
-
-.searchResults{
-
-}
-
 
 .clock{
     display: flex;
@@ -74,8 +74,8 @@
     font-size: 0.8em;
     letter-spacing: 1px;
     align-self: center;
-    border: 1px var(--third-color) solid;
-    border-radius: 15px;
+    background-color: var(--background-color);
+    border-radius: 10px;
     cursor: pointer;
 }
 .clock:hover{

@@ -23,7 +23,7 @@ const Dashboard = () => {
                     <Route path="/team" element={<TeamMgmt />} />
                     <Route path="/product" element={<Product />} />
                     <Route path="/inventory" element={<Inventory />} />
-                    <Route path="/stats" element={<Stats />} />
+                    <Route path="/charts" element={<Stats />} />
                     <Route path="/tasks" element={<Tasks />} />
                     <Route path="/profile" element={<Profile />} />
                     <Route path="/settings" element={<Settings />} />

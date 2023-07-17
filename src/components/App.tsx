@@ -19,8 +19,10 @@ export default function App(): JSX.Element {
     let themeObject = theme === 'dark' ? darkTheme : lightTheme;
 
 
+
     useEffect(() => {
         const storedTheme = localStorage.getItem('theme');
+        !storedTheme && localStorage.setItem('theme', 'dark');
         if (storedTheme === 'dark') {
             dispatch(setDarkTheme());
         } else {

@@ -6,30 +6,33 @@
     box-shadow: var(--box-shadow);
     border-radius: var(--border-radius);
     background-color: var(--background-widget);
+    box-sizing: border-box;
     overflow: hidden;
+}
+
+.sidebar .blankSpace{
+    min-height: 8vh;
 }
 
 .top-separation{
     width: 80%;
-    margin: 95px auto 30px auto;
     height: 2px;
+    margin: 30px auto 4vh;
     background-color: var(--third-color);
-
 }
 
 .navList{
     display: flex;
     flex-direction: column;
+    box-sizing: content-box;
 }
 
 .NavItem{
     display: flex;
-    padding-left: 1vw;
-    width: 100%;
-    height: 3.5em;
+    height: 4.2em;
     font-size: 0.8em;
+
     cursor: pointer;
-    margin-bottom: 0.8vh;
 }
     .NavItem:hover{
         background-color: var(--background-widget-secondary);
@@ -40,7 +43,7 @@
     }
 
 .focused{
-    background-color: var(--background-widget-secondary);
+    background-color: var(--background-color);
 }
 
 .line-separation{

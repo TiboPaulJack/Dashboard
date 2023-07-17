@@ -12,6 +12,7 @@ export default function Sidebar () {
     return (
       <div className={"sideBox"}>
           <div className={"sidebar"}>
+              <div className="blankSpace"></div>
               <div className={"top-separation"}/>
               <NavList />
               <NavSettings />

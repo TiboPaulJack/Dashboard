@@ -52,7 +52,13 @@ export default function NavItem  ({title}) {
 			onClick={handleClick}
 		>
 
-			<Stack direction={'row'} alignItems={'center'} spacing={2}>
+			<Stack
+				direction={'row'}
+				alignItems={'center'}
+				spacing={2}
+				ml={2}
+				sx={{boxSizing: 'border-box'}}
+			>
 				{title === "Dashboard" && <DashboardIcon/>}
 				{title === "Inventory" && <FormatListBulletedIcon/>}
 				{title === "Product" && <SellIcon/>}

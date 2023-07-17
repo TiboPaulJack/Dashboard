@@ -13,7 +13,6 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { updateTask } from "../../api/task";
 import {setSelectedTask, setTasks} from "../../redux/reducers/task";
-import { Task } from "../../types";
 
 export default function ReminderWidget() {
     
@@ -157,7 +156,7 @@ export default function ReminderWidget() {
                     );
                 })}
  
-                    <Paper 
+                    <Paper elevation={4}
                     sx={{
                         backgroundColor: `inherit`,
                         boxSizing: 'border-box',
@@ -168,20 +167,20 @@ export default function ReminderWidget() {
                     }}
                         key={tasks.length}  
                         >
-                        <ListItem
-                        sx={{
-                            height: '100%',
-                            display: 'flex',
-                            flexDirection: 'column',
-                        }}
-                        >
-                        <ListItemButton 
-                            sx={{width:'100%', height:'100%'}}
+
+                        <Button
+                            sx={{
+                                width:'100%',
+                                height:'100%',
+                                ' &:hover': {
+                                    backgroundColor: 'var(--background-widget) !important',
+                                },
+
+                            }}
                             onClick={handleNewTaskClick}
                         >
                             <Add sx={{m:'auto', color:'grey'}}/>
-                        </ListItemButton>
-                        </ListItem>
+                        </Button>
                         </Paper>
 
                     </List>
