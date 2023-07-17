@@ -42,6 +42,12 @@ const handleSubmit = (event: React.MouseEvent<HTMLButtonElement>) => {
 
 const isFormValid = formValues.username.trim() !== '' && formValues.password.trim() !== '';
 
+const buttonStyle = {
+    ' &:hover': {
+        backgroundColor: '#ADD0C0',
+    },
+}
+
     return (
     <div className="auth_page">
         <Paper className={'auth_container'}
@@ -86,6 +92,7 @@ const isFormValid = formValues.username.trim() !== '' && formValues.password.tri
                     fullWidth
                     disabled={!isFormValid}
                     onClick={handleSubmit}
+                    sx={buttonStyle}
                 >
                     Login
                 </Button>

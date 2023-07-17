@@ -112,17 +112,7 @@ main{
     height: 100%;
     gap: 4vh;
 }
-.sidebar{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
-    height: 100%;
-    box-shadow: var(--box-shadow);
-    border-radius: var(--border-radius);
-    background-color: var(--background-widget);
-    overflow: hidden;
-}
+
 
 
 /*ERROR*/
