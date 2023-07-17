@@ -27,7 +27,7 @@ const NavItem = ({title, icon }) => {
 				}else if(title === "Dashboard"){
 					return navigate("/")
 				}else if(title === "Inventory"){
-					/*dispatch(setInventoryFocusOpen(false))*/
+					dispatch(setInventoryFocusOpen(false))
 					return navigate("/inventory")
 				}
 				else{
