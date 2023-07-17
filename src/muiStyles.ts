@@ -10,7 +10,7 @@ const textFieldStyles = {
             styleOverrides: {
                 root: {
                    ' &:hover': {
-                        backgroundColor: '#ADD0C0',
+                        backgroundColor: '#ADD0C0 !important',
                     },
                 },
             },
