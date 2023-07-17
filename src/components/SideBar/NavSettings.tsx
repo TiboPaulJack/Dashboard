@@ -19,15 +19,15 @@ const NavSettings = () => {
 					<div className={"line-separation"}/>
 					<NavItem key={"Account"}
 									 title={"Profile"}
-									 icon={"dist/assets/icons/icon-dark/user-fill.svg"}
+									 icon={"public/icons/icon-dark/user-fill.svg"}
 					/>
 					<NavItem key={"settings"}
 									 title={"Settings"}
-									 icon={"dist/assets/icons/icon-dark/settings-4-fill.svg"}
+									 icon={"public/icons/icon-dark/settings-4-fill.svg"}
 					/>
 					<NavItem key={"logout"}
 									 title={"Logout"}
-									 icon={"dist/assets/icons/icon-dark/logout-circle-line.svg"}
+									 icon={"public/icons/icon-dark/logout-circle-line.svg"}
 
 					/>
 			</div>
