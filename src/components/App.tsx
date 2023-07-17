@@ -2,7 +2,7 @@ import '../assets/css/app.css'
 import '../assets/css/mediaQueries.css'
 import {useEffect} from "react";
 import {ThemeProvider} from "@mui/material/styles";
-import {darkTheme, lightTheme} from "../muiStyles";
+import {darkTheme, lightTheme} from "../muiStyles.js";
 import Auth from "./auth/auth";
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../redux/store";
