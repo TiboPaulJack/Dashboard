@@ -21,6 +21,8 @@ export default function App() {
     let themeObject = theme === 'dark' ? darkTheme : lightTheme;
 
 
+    console.log('render')
+
 
     useLayoutEffect(() => {
         const storedTheme = localStorage.getItem('theme');
