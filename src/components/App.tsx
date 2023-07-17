@@ -12,7 +12,7 @@ import Dashboard from "./Dashboard";
 import ErrorBoundary from './ErrorBoundary';
 
 
-export default function App(): JSX.Element {
+export default function App() {
     const dispatch = useDispatch();
     const theme = useSelector((state : RootState) => state.config.theme);
     const loggedIn = useSelector((state : RootState) => state.auth.isLogged);
@@ -32,17 +32,19 @@ export default function App(): JSX.Element {
 
 
     return (
-        <ThemeProvider theme={themeObject}>
-            <BrowserRouter>
-                <ErrorBoundary>
-                    <Routes>
-                        {!loggedIn && <Route path="/*" element={<Auth />} />}
-                        {loggedIn && (
-                            <Route path="/*" element={<Dashboard />} />
-                        )}
-                    </Routes>
-                </ErrorBoundary>
-            </BrowserRouter>
-        </ThemeProvider>
+        <StylesProvider injectFirst>
+            <ThemeProvider theme={themeObject}>
+                <BrowserRouter>
+                    <ErrorBoundary>
+                        <Routes>
+                            {!loggedIn && <Route path="/*" element={<Auth />} />}
+                            {loggedIn && (
+                                <Route path="/*" element={<Dashboard />} />
+                            )}
+                        </Routes>
+                    </ErrorBoundary>
+                </BrowserRouter>
+            </ThemeProvider>
+        </StylesProvider>
     );
 }

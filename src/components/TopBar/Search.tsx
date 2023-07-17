@@ -80,31 +80,32 @@ export default function SearchBar() {
 				}}
 				renderInput={(params) => (
 					<TextField
+						placeholder={'Search..'}
 						{...params}
 						InputProps={{
 							...params.InputProps,
 							type: 'search',
 							disableOutline: true,
+							disableUnderline: true,
 							sx: {
-								borderRadius: '10px', // border radius à l'état normal
+								borderRadius: '10px',
 								'& fieldset': {
 									borderColor: 'transparent',
 								},
 								'&:hover': {
-									borderRadius: '10px', // border radius au hover
+									borderRadius: '10px',
 									'fieldset': {
 										borderColor: 'transparent',
 									}
 								},
 								'&.Mui-focused': {
-									borderRadius: '10px', // border radius lorsqu'il est focus
+									borderRadius: '10px',
 									'fieldset': {
 										borderColor: 'transparent',
 									},
 								},
 							},
 						}}
-						label="Search.."
 					/>
 				)}
 			/>
