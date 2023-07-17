@@ -13,15 +13,12 @@ import ErrorBoundary from './ErrorBoundary';
 import {StyledEngineProvider} from "@mui/material";
 
 
-
 export default function App() {
     const dispatch = useDispatch();
     const theme = useSelector((state : RootState) => state.config.theme);
     const loggedIn = useSelector((state : RootState) => state.auth.isLogged);
     let themeObject = theme === 'dark' ? darkTheme : lightTheme;
 
-
-    console.log('render')
 
 
     useLayoutEffect(() => {
@@ -35,8 +32,7 @@ export default function App() {
     }, []);
 
     return (
-        <StyledEngineProvider injectFirst key={theme}>
-            <ThemeProvider theme={themeObject}>
+
                 <BrowserRouter>
                     <ErrorBoundary>
                         <Routes>
@@ -47,7 +43,5 @@ export default function App() {
                         </Routes>
                     </ErrorBoundary>
                 </BrowserRouter>
-            </ThemeProvider>
-        </StyledEngineProvider>
     );
 }
