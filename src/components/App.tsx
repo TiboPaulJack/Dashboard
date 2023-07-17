@@ -10,6 +10,8 @@ import {setDarkTheme, setLightTheme} from "../redux/reducers/config";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Dashboard from "./Dashboard";
 import ErrorBoundary from './ErrorBoundary';
+import {StyledEngineProvider} from "@mui/material";
+
 
 
 export default function App() {
@@ -32,7 +34,7 @@ export default function App() {
 
 
     return (
-        <StylesProvider injectFirst>
+        <StyledEngineProvider injectFirst>
             <ThemeProvider theme={themeObject}>
                 <BrowserRouter>
                     <ErrorBoundary>
@@ -45,6 +47,6 @@ export default function App() {
                     </ErrorBoundary>
                 </BrowserRouter>
             </ThemeProvider>
-        </StylesProvider>
+        </StyledEngineProvider>
     );
 }
