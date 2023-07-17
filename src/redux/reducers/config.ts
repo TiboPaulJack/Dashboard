@@ -8,6 +8,7 @@ export interface ConfigState {
     teamFormOpen: boolean;
     inventoryFocusOpen: boolean;
     searchResults: [];
+    tasksFilter: string;
 
 }
 
@@ -19,6 +20,7 @@ const initialState: ConfigState = {
     teamFormOpen: false,
     inventoryFocusOpen: false,
     searchResults: [],
+    tasksFilter: 'pending',
 };
 
 const configSlice = createSlice({
@@ -49,6 +51,9 @@ const configSlice = createSlice({
         setSearch(state, action) {
             state.searchResults = action.payload;
         },
+        setTasksFilter(state, action) {
+            state.tasksFilter = action.payload;
+        },
     },
 });
 
@@ -61,6 +66,7 @@ export const {
     setInventoryFocusOpen,
     setEditProductMode,
     setSearch,
+    setTasksFilter,
 
 } = configSlice.actions;
 

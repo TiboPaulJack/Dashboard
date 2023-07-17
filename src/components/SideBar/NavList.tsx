@@ -4,7 +4,7 @@ import data from "../../../data/navList.json";
 import NavItem from "./NavItem";
 
 
-export default function NavList  ({ children })  {
+export default function NavList  ()  {
 
 
 
@@ -17,10 +17,12 @@ export default function NavList  ({ children })  {
 				/>
 		);
 
-		return <>
+return (
+		<div className="navList">
 			{navItems}
-			{children}
-		</>;
+
+		</div>
+)
 };
 
 

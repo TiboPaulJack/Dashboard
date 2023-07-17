@@ -1,7 +1,7 @@
 import '../../assets/css/product.css'
 import Form from "./form";
-import Preview from "./Preview";
-import Options from "./Options";
+import ImagesForm from "./ImagesForm";
+import Recap from "./Recap";
 import {useEffect} from "react";
 import {getAllProducts} from "../../api/product";
 import {useDispatch, useSelector} from "react-redux";
@@ -26,8 +26,8 @@ export default function Product() {
         <div className={"containerProduct"}>
             <Form/>
             <section className={"product_right"}>
-                <Preview/>
-                <Options/>
+                <ImagesForm/>
+                <Recap/>
             </section>
         </div>
     )

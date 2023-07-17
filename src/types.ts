@@ -46,6 +46,7 @@ export interface Task {
     content: string,
     status: string,
     color: string,
+    date: string,
     user_id: number,
     checked: boolean,
 }

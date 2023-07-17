@@ -18,7 +18,7 @@ import {setInventoryFocusOpen} from "../../redux/reducers/config";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 
-export default function Options() {
+export default function Recap() {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();

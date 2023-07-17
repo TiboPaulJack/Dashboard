@@ -24,7 +24,7 @@ import {deleteProduct, updateProduct} from "../../api/product";
 
 
 
-export default function Options() {
+export default function Recap() {
 
     const dispatch = useDispatch();
 

@@ -22,6 +22,7 @@ const textFieldStyles = {
                     height: height,
                     borderRadius: borderRadius,
                     padding: padding,
+                    fontSize: '10px',
                 },
             },
         },
@@ -37,7 +38,8 @@ const textFieldStyles = {
         MuiInput: {
             styleOverrides: {
                 input: {
-                    fontSize: '10px',
+                    fontSize: '8px',
+                    height: '10px',
                 },
             },
         },

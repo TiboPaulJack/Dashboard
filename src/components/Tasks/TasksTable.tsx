@@ -17,24 +17,12 @@ import {useState} from "react";
 export default function TasksTable () {
 
 
+
+
     const dispatch = useDispatch();
     const tasks = useSelector((state: any) => state.task.tasks);
-    const newTask = useSelector((state: any) => state.task.newTask);
-    const selectedTask = useSelector((state: any) => state.task.selectedTask);
     const [updateKey, setUpdateKey] = useState(Math.random());
-
-
-
-    useEffect(() => {
-        // Forcer une mise à jour en changeant une clé
-        setUpdateKey(Math.random());
-    }, [tasks]);
-
-    useEffect(() => {
-        getTasks();
-    }, [newTask, selectedTask, selectedTask.id]);
-
-
+    const tasksFilter = useSelector((state: any) => state.config.tasksFilter);
 
 
     const handleCheckBox = (name: string, id? : number) => {
@@ -43,7 +31,9 @@ export default function TasksTable () {
             const selectedTasks = tasks.map((task: Task) => {
                 return { ...task, checked: !allChecked };
             });
+            setUpdateKey(Math.random())
             dispatch(setTasks(selectedTasks));
+
         }
         else if (name === "select") {
             const selectedTasks = tasks.map((task: Task) =>
@@ -56,7 +46,9 @@ export default function TasksTable () {
 
     const tasksList =
         tasks &&
-        tasks.map((task: any) => {
+        tasks
+            .filter((task: Task) => tasksFilter === "all" ? true : task.status === tasksFilter)
+            .map((task: any) => {
         return (
             <TableRow
                 hover

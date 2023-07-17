@@ -5,7 +5,7 @@ import {Button} from "@mui/material";
 import Stack from "@mui/material/Stack";
 import {useState} from "react";
 
-export default function Preview() : JSX.Element {
+export default function ImagesForm() : JSX.Element {
 
     const [selected, setSelected] = useState<number>(0);
 
@@ -32,12 +32,14 @@ export default function Preview() : JSX.Element {
                     <Stack spacing={1}>
                         <Stack direction={'row'} spacing={2}>
                             <Button
+                            className={"imageForm_button"}
                             variant="contained"
                             fullWidth
                         >
                             Upload image
                         </Button>
                             <Button
+                                className={"imageForm_button"}
                                 variant="contained"
                                 fullWidth
                             >
@@ -65,12 +67,14 @@ export default function Preview() : JSX.Element {
                     </Stack>
                     <Stack direction={"row"} spacing={2}>
                         <Button
+                            className={"imageForm_button"}
                             variant="outlined"
                             fullWidth
                         >
                             Delete image
                         </Button>
                         <Button
+                            className={"imageForm_button"}
                             variant="contained"
                             fullWidth
                         >

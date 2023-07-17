@@ -26,7 +26,7 @@
 
 
 
-@media (max-width: 501px) {
+@media (max-width: 768px) {
     .visible{
         width: 100%;
         margin-left: 0;
@@ -34,5 +34,10 @@
     }
     .hidden{
         display: none;
+    }
+    .modifier{
+        margin-left: 0;
+        transition: none;
+        gap: 0;
     }
 }

@@ -41,3 +41,12 @@
 .table__head{
     background-color: var(--third-color);
 }
+
+
+
+
+@media (max-width: 768px) {
+    .teamGap{
+        gap: 0;
+    }
+}

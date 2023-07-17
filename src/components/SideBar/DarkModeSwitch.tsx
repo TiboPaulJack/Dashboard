@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import {setDarkTheme} from "../../redux/reducers/config";
 import {useDispatch} from "react-redux";
+import { Box, Switch } from "@mui/material";
+import { NightsStay, WbSunny } from "@mui/icons-material";
 
-export default function DarkModeSwitch ({ updateTheme }) {
+export default function DarkModeSwitch () {
 
 		const [isChecked, setIsChecked] = useState(false);
 		const dispatch = useDispatch();
@@ -39,18 +41,18 @@ export default function DarkModeSwitch ({ updateTheme }) {
 		};
 
 		return (
-				<div className="theme-switch-wrapper">
-						<label className="theme-switch" htmlFor="checkbox">
-								<input
-										type="checkbox"
-										id="checkbox"
-										checked={isChecked}
-										onChange={handleDarkModeChange}
-								/>
-								<div className="slider round"></div>
-						</label>
-						<em>Dark mode</em>
-				</div>
+			
+		<Box sx={{ display: 'flex', alignItems: 'center', m:'auto auto 15px auto', justifySelf:'flex-end' }}>
+			<WbSunny fontSize="small" />
+			<Switch
+				type="checkbox"
+				id="checkbox"
+				checked={isChecked}
+				onChange={handleDarkModeChange}
+				sx={{ mx: 1}}
+			/>
+			<NightsStay fontSize="small" />
+		</Box>
 		);
 };
 

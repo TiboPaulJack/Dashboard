@@ -72,7 +72,7 @@
         grid-column-end: 2;
         grid-row-start: 1;
         border-radius: var(--border-radius);
-        background-color: var(--background-widget);
+        background-color: var(--third-color);
         box-shadow: var(--box-shadow);
     }
         .connected-widget h2, span{
@@ -144,12 +144,16 @@
         .task-widget__container-top{
             height: 50%;
             max-height: 50%;
+            width: 100%;
             box-shadow: var(--box-shadow);
             border-radius: var(--border-radius);
             background-color: var(--background-widget);
             overflow: hidden;
 
         }
+
+
+
         .task-widget__container-bottom{
             height: 50%;
             box-sizing: border-box;
@@ -159,6 +163,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            border-radius: var(--border-radius);
             box-sizing: border-box;
             height: 100%;
             border: var(--background-widget) 3px solid;;

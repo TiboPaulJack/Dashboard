@@ -11,22 +11,14 @@ import {useSelector} from "react-redux";
 
 export default function Tasks () : JSX.Element {
 
-    const newTask = useSelector((state: any) => state.task.newTask);
-    const selectedTask = useSelector((state: any) => state.task.selectedTask);
 
 
-
-    useEffect(() => {
-        getTasks();
-    }, [newTask]);
 
 
     return (
         <div className={"containerTasks"}>
                 <div className={"tasks"}>
-                    <div className={"tasks__header"}>
-                        <Header/>
-                    </div>
+                    <Header/>
                     <TasksTable/>
                 </div>
             <Form/>

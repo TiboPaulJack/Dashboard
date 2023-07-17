@@ -12,7 +12,7 @@
     --box-shadow:0 5px 15px rgba(0, 0, 0, 0.3);
     --container-height:calc(100% - 70px - 4vh);
     --container-height-mobile:calc(100% - 140px);
-    --background-widget:#E6E8EC;
+    --background-widget:#cccdd1;
     --background-widget-secondary: #ADD0C0;
     --border-radius-bar: 2px;
     --blue-matisse: #245FA0;
@@ -23,7 +23,7 @@
     --font-primary: 'Raleway', sans-serif;
     --text-color: #393939;
     --third-color: #a1a9ab;
-    --background-color: #cccdd1;
+    --background-color: #E6E8EC;
     --text-contrast-color: white;
     --transition-background: background-color 0.2s linear, color 0.1s ease ;
     --hero-svg:url("/src/assets/bg/World Map.svg");
@@ -100,7 +100,7 @@ main{
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    min-height: 70px;
+    min-height: 8vh;
     box-shadow: var(--box-shadow);
     border-radius: var(--border-radius);
     background-color: var(--background-widget);
@@ -115,8 +115,8 @@ main{
 .sidebar{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     width: 100%;
-    align-self: end;
     height: 100%;
     box-shadow: var(--box-shadow);
     border-radius: var(--border-radius);
@@ -124,6 +124,16 @@ main{
     overflow: hidden;
 }
 
+
+/*ERROR*/
+
+.oups{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vh;
+    height: 100vh;
+}
 
 .css-1dfiwb5-MuiButtonBase-root-MuiButton-root:hover{
     background-color: var(--background-widget-secondary) !important;

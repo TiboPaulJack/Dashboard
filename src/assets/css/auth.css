@@ -24,11 +24,11 @@
     text-decoration: underline;
 }
 
-@media screen and (max-width: 768px){
 
+@media screen and (max-width: 1200px){
 
-    .auth_container{
-        width: 95% !important;
+    .auth_page .auth_container{
+        width: 40%;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -36,8 +36,8 @@
         overflow: hidden !important;
     }
 
-    .auth_form{
-        width: 80% !important;
+    .auth_container .auth_form{
+        width: 80% ;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -45,4 +45,44 @@
     }
 }
 
+@media screen and (max-width: 768px){
+
+    .auth_page .auth_container{
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden !important;
+    }
+
+    .auth_container .auth_form{
+        width: 80% ;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+@media screen and (max-width: 400){
+
+    .auth_page .auth_container{
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden !important;
+    }
+
+    .auth_container .auth_form{
+        width: 80% ;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
 

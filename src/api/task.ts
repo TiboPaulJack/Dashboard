@@ -8,6 +8,7 @@ import {Task} from "../types";
 export const getTasks = async () => {
 
     try {
+        console.log('fetching tasks')
         const response = await axiosInstance.get('/tasks');
         store.dispatch(setTasks(response.data));
     } catch (error) {
@@ -36,6 +37,7 @@ export const updateTask = async (id: number, data: any) => {
     }
 
     if(data.user_id) task.user_id = data.user_id;
+    if(data.date) task.date = data.date;
 
     try {
         const response = await axiosInstance.patch(`/task/${id}`, task);

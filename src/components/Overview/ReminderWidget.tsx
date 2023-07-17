@@ -1,4 +1,4 @@
-import { Delete, Edit } from "@mui/icons-material";
+import { Add, Delete, Edit } from "@mui/icons-material";
 import { Button } from "@mui/material";
 import Checkbox from '@mui/material/Checkbox';
 import List from '@mui/material/List';
@@ -9,11 +9,19 @@ import Paper from '@mui/material/Paper';
 import Stack from "@mui/material/Stack";
 import { createRef, useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { updateTask } from "../../api/task";
+import {setSelectedTask, setTasks} from "../../redux/reducers/task";
+import { Task } from "../../types";
 
-export default function CheckboxListSecondary() {
+export default function ReminderWidget() {
     
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     const [selected, setSelected] = useState(null);
     const [isLastElementClicked, setIsLastElementClicked] = useState(false);
+    const [isHovered, setIsHovered] = useState(false);
     
     const tasks = useSelector((state: any) => state.task.tasks);
     const taskRefs = useRef([]);
@@ -22,7 +30,26 @@ export default function CheckboxListSecondary() {
     useEffect(() => {
         taskRefs.current = tasks.map((_, i) => taskRefs.current[i] ?? createRef());
     }, [tasks]);
+
+    const handleNewTaskClick = () => {
+        navigate('/tasks');
+    }
+
+    const handleChangeStatus = (event, id: number) => {
+        const updatedTasks = tasks.map((task) => {
+            if(task.id === id){
+                return { ...task, status: "done" };
+            }
+            return task;
+        });
+        dispatch(setTasks(updatedTasks));
+        updateTask(id, {status: "done"});
+    }
     
+    const handleEditTask = (task) => {
+        navigate('tasks')
+        dispatch(setSelectedTask(task))
+    }
     
     const handleListItemClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>, index: number) => {
         if(selected === index){
@@ -43,13 +70,16 @@ export default function CheckboxListSecondary() {
         });
     };
     
+    const pendingTasks = tasks.filter((task) => task.status === "pending");
+
+    console.log(pendingTasks)
     
     let heightPlaceholderEmptyOtherTasks : string;
-    if (tasks.length < 2 && selected !== null) {
+    if (pendingTasks.length < 2 && selected !== null) {
         heightPlaceholderEmptyOtherTasks = 'calc(34.2% - 10px)'; 
-    } else if (tasks.length < 2) {
+    } else if (pendingTasks.length < 2) {
         heightPlaceholderEmptyOtherTasks = '66%';
-    } else if (tasks.length <= 3) {
+    } else if (pendingTasks.length <= 3) {
         heightPlaceholderEmptyOtherTasks = 'calc(34.2% - 10px)';
     } else {
         heightPlaceholderEmptyOtherTasks = '66%'; 
@@ -59,9 +89,11 @@ export default function CheckboxListSecondary() {
     
     
     return (
-        tasks.length > 0 ?
+        pendingTasks.length !== 0 ?
         <List ref={listRef} sx={{overflow: 'auto', height: '100%', p: 0,}}>
-        {tasks.map((task, index) => {
+        {pendingTasks
+            .filter((task) => task.status === "pending")
+            .map((task, index) => {
             let ref = taskRefs.current[index];
             return (
                 <Paper elevation={4} ref={ref}
@@ -81,7 +113,7 @@ export default function CheckboxListSecondary() {
                         display: 'flex',
                         flexDirection: 'column',
                     }}
-                    secondaryAction={ <Checkbox edge="end" /> }
+                    secondaryAction={ <Checkbox edge="end" checked={task.status !== "pending"} onChange={(e) => handleChangeStatus(e, task.id)} /> }
                     >
                     <ListItemButton
                     sx={{
@@ -95,7 +127,7 @@ export default function CheckboxListSecondary() {
                     primary={task.title}
                     primaryTypographyProps={{ sx: { textAlign: 'left', height: '30px' } }}
                     secondary={task.content}
-                    secondaryTypographyProps={{ sx: { textAlign: 'left', height: '40px', mb:'auto' }}}
+                    secondaryTypographyProps={{ sx: { textAlign: 'left', height: '40px', mb:'auto', color:'#52535c' }}}
                     sx={{
                         display: 'flex',
                         height: '100%',
@@ -112,16 +144,10 @@ export default function CheckboxListSecondary() {
                         <Button
                         variant="contained"
                         fullWidth
+                        onClick={() => {handleEditTask(task)}}
                         endIcon={<Edit/>}
                         >
                         Edit
-                        </Button>
-                        <Button
-                        variant="contained"
-                        fullWidth
-                        endIcon={<Delete/>}
-                        >
-                        Delete
                         </Button>
                         </Stack>
                     }
@@ -130,18 +156,16 @@ export default function CheckboxListSecondary() {
                     </Paper>
                     );
                 })}
-                {tasks.length < 3 || isLastElementClicked && 
-                    
+ 
                     <Paper 
                     sx={{
                         backgroundColor: `inherit`,
                         boxSizing: 'border-box',
                         color: 'white',
                         height: `${heightPlaceholderEmptyOtherTasks}`,
-                        transition: 'height 0.5s',
-                        '&:not(:last-child)': {
-                            marginBottom: '10px',
-                        }}}
+                        margin: '0',
+
+                    }}
                         key={tasks.length}  
                         >
                         <ListItem
@@ -151,25 +175,33 @@ export default function CheckboxListSecondary() {
                             flexDirection: 'column',
                         }}
                         >
-                        <ListItemText
-                        secondary={"No other tasks to display"}
-                        secondaryTypographyProps={{ sx: { textAlign: 'left', mb:'auto', mt:'auto' }}}
-                        sx={{
-                            display: 'flex',
-                            height: '100%',
-                            flexDirection: 'column',
-                            justifyContent: 'space-between',
-                            p: 0,
-                            m: 0,
-                        }}
-                        />
+                        <ListItemButton 
+                            sx={{width:'100%', height:'100%'}}
+                            onClick={handleNewTaskClick}
+                        >
+                            <Add sx={{m:'auto', color:'grey'}}/>
+                        </ListItemButton>
                         </ListItem>
                         </Paper>
-                    }
+
                     </List>
-                    :
-                    <div className={"task-widget__container-bottom-empty"}>
-                    No tasks to display
+        :
+                    <div 
+                    onMouseEnter={() => setIsHovered(true)} 
+                    onMouseLeave={() => setIsHovered(false)} 
+                    className={"task-widget__container-bottom-empty"}
+                    >
+                    {!isHovered ? 
+                        "No tasks to display"
+                        :
+                        <div style={{cursor:'pointer', width:'100%', height:'100%', display:'flex'}}
+                        onClick={handleNewTaskClick}
+                        onMouseEnter={() => setIsHovered(true)}
+                        onMouseLeave={() => setIsHovered(false)}
+                        >                        
+                            <Add sx={{m:'auto'}}/>
+                        </div>
+                    }
                     </div>
                     
                     );

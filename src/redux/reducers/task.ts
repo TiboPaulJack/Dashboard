@@ -15,13 +15,14 @@ const initialState: TaskState = {
         title: '',
         content: '',
         color: '',
-        status: '',
+        status: 'pending',
+        date : '',
         user_id: null,
         checked: false,
     },
     selectedTask: {} as Task,
-
 };
+
 
 const taskSlice = createSlice({
     name: 'task',

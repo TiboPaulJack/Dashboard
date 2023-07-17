@@ -5,7 +5,7 @@ import {logOut} from "../../redux/reducers/auth";
 
 
 
-const NavSettings = ({setRendered}) => {
+const NavSettings = () => {
 
 		const dispatch = useDispatch()
 		const navigate = useNavigate();

@@ -1,4 +1,4 @@
-import Sidebar from "./SideBar/Sidebar.jsx";
+import Sidebar from "./SideBar/Sidebar";
 import TopBar from "./TopBar/TopBar";
 import MobileNav from "./MobileNav/MobileNav";
 import {Routes, Route} from "react-router-dom";

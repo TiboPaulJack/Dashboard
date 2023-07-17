@@ -31,6 +31,12 @@
     }
     main .mobileNav{
         display: flex;
+        
+    }
+    main .navList{
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
     }
     .sideBox{
         display: none ;
@@ -39,10 +45,11 @@
         grid-template-rows: 1fr 2fr;
         overflow: scroll !important;
     }
-    .navItem{
+    .navList .navItem{
         width: 100%;
         display: flex;
         justify-content: center ;
+        flex-direction: column;
     }
     .settings{
         margin-top: 0 ;

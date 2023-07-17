@@ -1,6 +1,6 @@
 import Form from "../Inventory/form";
-import Preview from "../Product/Preview";
-import Options from "../Inventory/Options";
+import ImagesForm from "../Product/ImagesForm";
+import Recap from "./Recap";
 import DeleteIcon from "@mui/icons-material/Delete";
 import {Button} from "@mui/material";
 import {useDispatch, useSelector} from "react-redux";
@@ -16,8 +16,8 @@ export default function ProductFocus () {
         <div className={"productFocus"}>
             <Form/>
             <section className={"product_right"}>
-                <Preview/>
-                <Options/>
+                <ImagesForm/>
+                <Recap/>
             </section>
         </div>
     )

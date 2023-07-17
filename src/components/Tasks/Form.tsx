@@ -12,6 +12,8 @@ import {createTask, deleteTask, updateTask} from "../../api/task";
 import {Task} from "../../types";
 import {setNewTask} from "../../redux/reducers/task";
 import {Clear, Delete, Save, SaveAlt} from "@mui/icons-material";
+// @ts-ignore
+import dayjs from 'dayjs';
 
 
 const colors = [
@@ -36,29 +38,31 @@ export default function Form () {
 
 
 
-    useEffect(() => {
-        if(!users.length){
-            getUsers();
-        }
-    },[]);
-
     const handleClearForm = () => {
         dispatch(clearNewTask());
     }
 
-    const handleDeleteSelected = () => {
+    const handleChangeDate = (date) => {
+        const name = "date";
+        const value = date.toISOString().split('T')[0];
+        console.log(value)
         if(Object.values(selectedTask).length !== 0){
-            deleteTask(selectedTask.id);
-            dispatch(clearSelectedTask());
-            return
+            dispatch(setSelectedTask({ ...selectedTask, [name]: value }));
+        }else{
+            dispatch(setNewTask({ ...newTask, [name]: value }));
         }
-        let tasksCopy = [...tasks];
-        const selectedTasks = tasks.filter((task: Task) => task.checked)
-        .forEach((task: Task) => {
-            deleteTask(task.id);
-            tasksCopy.filter((task: Task) => task.id !== task.id);
+    }
+
+
+    const handleDeleteSelected = () => {
+    
+        tasks.map((task: Task) => {
+            if(task.checked){
+                deleteTask(task.id);
+                dispatch(setTasks(tasks.filter((task: Task) => task.id !== task.id)));
+            }
         });
-        dispatch(setTasks(tasksCopy));
+        dispatch(clearSelectedTask());
     }
 
     const handleSaveTask = () => {
@@ -67,6 +71,7 @@ export default function Form () {
             dispatch(clearSelectedTask())
         } else {
             createTask(newTask);
+            dispatch(setTasks([...tasks, newTask]));
             dispatch(clearNewTask());
         }
     }
@@ -134,8 +139,12 @@ export default function Form () {
             </FormControl>
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <DatePicker
-                        onChange={handleChange}
-                        value={Object.values(selectedTask).length !== 0 ? selectedTask.date : newTask.date}
+                        onChange={handleChangeDate}
+                        value={
+                            Object.values(selectedTask).length !== 0
+                                ? (selectedTask.date ? dayjs(selectedTask.date) : null)
+                                : (newTask.date ? dayjs(newTask.date) : null)
+                        }
                     />
                 </LocalizationProvider>
             <FormControl>

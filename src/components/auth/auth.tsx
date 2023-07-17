@@ -36,8 +36,8 @@ const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 
 const handleSubmit = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
-    console.log(formValues);
     dispatch(logIn());
+    navigate('/')
 }
 
 const isFormValid = formValues.username.trim() !== '' && formValues.password.trim() !== '';
