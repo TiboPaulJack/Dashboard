@@ -1,0 +1,146 @@
+
+/*noinspection CssUnknownTarget*/
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+/*noinspection CssUnknownTarget*/
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+/*noinspection CssUnknownTarget*/
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Monoton&display=swap');
+/*noinspection CssUnknownTarget*/
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap');
+
+:root{
+    --box-shadow:0 5px 15px rgba(0, 0, 0, 0.3);
+    --container-height:calc(100% - 70px - 4vh);
+    --container-height-mobile:calc(100% - 140px);
+    --background-widget:#cccdd1;
+    --background-widget-secondary: #ADD0C0;
+    --border-radius-bar: 2px;
+    --blue-matisse: #245FA0;
+    --confirm-color: #9CF332;
+    --bordersize: 2px;
+    --danger-color: #E34430;
+    --border-radius:5px;
+    --font-primary: 'Raleway', sans-serif;
+    --text-color: #393939;
+    --third-color: #a1a9ab;
+    --background-color: #E6E8EC;
+    --text-contrast-color: white;
+    --transition-background: background-color 0.2s linear, color 0.1s ease ;
+    --hero-svg:url("/dist/assets/bgg/World Map.svg");
+}
+
+/***********DARK*MODE*************/
+[data-theme="dark"]{
+    --background-color: #2f302f;
+    --text-color:#eff0f4;
+    --background-widget: #545554;
+    --background-widget-secondary: #8ea198;
+    --third-color: #3d3d3d;
+    --text-contrast-color: black;
+    --hero-svg:url("/dist/assets/bgg/World Map-night.svg");
+}
+
+
+ul, li, a{
+    text-decoration: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+button{
+    transition: background-color 0.3s ease-in-out !important;
+
+}
+button:hover{
+    background-color: var(--blue-matisse) !important;
+    color: white;
+}
+
+div{
+    transition: var(--transition-background)
+}
+body{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background-color: var(--background-color);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    box-sizing: border-box;
+    color: var(--text-color);
+    font-family: var(--font-primary);
+}
+.app{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+    padding: 1vw;
+    margin: 0;
+    box-sizing: border-box;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    margin-left: 3vw;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    gap: 4vh;
+}
+.section-title{
+    margin-left: 45px;
+    font-size: 1.4rem;
+}
+.topBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 8vh;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    background-color: var(--background-widget);
+}
+.sideBox{
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    height: 100%;
+    gap: 4vh;
+}
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    background-color: var(--background-widget);
+    overflow: hidden;
+}
+
+
+/*ERROR*/
+
+.oups{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vh;
+    height: 100vh;
+}
+
+.css-1dfiwb5-MuiButtonBase-root-MuiButton-root:hover{
+    background-color: var(--background-widget-secondary) !important;
+
+}
+
+.css-19iex7o-MuiButtonBase-root-MuiButton-root:hover{
+    background-color: var(--third-color) !important;
+
+}

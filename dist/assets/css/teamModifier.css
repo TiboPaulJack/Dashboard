@@ -1,0 +1,43 @@
+
+
+.modifier {
+    box-sizing: border-box;
+    position: relative;
+    background-color: var(--background-widget);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 0;
+    height: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: padding 0.3s, width 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.visible {
+    box-sizing: border-box;
+    position: initial;
+    overflow: scroll;
+    display: flex;
+    width: 70%;
+    transition: width 0.3s ease-in-out;
+}
+
+
+
+@media (max-width: 768px) {
+    .visible{
+        width: 100%;
+        margin-left: 0;
+        transition: none;
+    }
+    .hidden{
+        display: none;
+    }
+    .modifier{
+        margin-left: 0;
+        transition: none;
+        gap: 0;
+    }
+}
