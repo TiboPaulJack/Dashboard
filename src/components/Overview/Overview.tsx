@@ -1,4 +1,4 @@
-import "../../assets/css/overview.css"
+import "../../../dist/assets/css/overview.css"
 import WelcomeBanner from "./welcomeBanner.js";
 import ContentOverview from "./contentOverview";
 import TaskWidget from "./taskWidget.js";

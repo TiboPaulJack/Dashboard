@@ -1,4 +1,4 @@
-import '../../assets/css/auth.css'
+import '../../../dist/assets/css/auth.css'
 import {NavigateFunction, useNavigate} from "react-router-dom";
 import {useState} from "react";
 import Stack from "@mui/material/Stack";

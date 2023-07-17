@@ -16,6 +16,7 @@ import {Clear, Delete, Save, SaveAlt} from "@mui/icons-material";
 import dayjs from 'dayjs';
 
 
+
 const colors = [
     "#B8AB8E",
     "#CF6153",
@@ -36,6 +37,9 @@ export default function Form () {
     const newTask = useSelector((state: any) => state.task.newTask);
     const selectedTask = useSelector((state: any) => state.task.selectedTask);
 
+    useEffect(() => {
+        getUsers()
+    }, []);
 
 
     const handleClearForm = () => {
@@ -128,7 +132,7 @@ export default function Form () {
                 {radioColorList}
             </Stack>
             <FormControl>
-                <InputLabel>User</InputLabel>
+                <InputLabel shrink>User</InputLabel>
                 <Select
                     onChange={handleChange}
                     name={"user"}

@@ -1,4 +1,4 @@
-import '../assets/css/styles.css'
+import '../../dist/assets/css/styles.css'
 // @ts-ignore
 import React from 'react'
 // @ts-ignore
