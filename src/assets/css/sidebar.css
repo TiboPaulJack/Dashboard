@@ -11,13 +11,13 @@
 }
 
 .sidebar .blankSpace{
-    min-height: 8vh;
+    min-height: 12vh;
 }
 
 .top-separation{
     width: 80%;
     height: 2px;
-    margin: 30px auto 4vh;
+    margin: 0 auto 3vh;
     background-color: var(--third-color);
 }
 
@@ -29,7 +29,7 @@
 
 .NavItem{
     display: flex;
-    height: 4.2em;
+    height: 7vh;
     font-size: 0.8em;
 
     cursor: pointer;
@@ -48,7 +48,7 @@
 
 .line-separation{
     width: 80%;
-    margin: auto auto 30px;
+    margin: 3vh auto 3vh;
     height: 2px;
     background-color: var(--third-color);
 

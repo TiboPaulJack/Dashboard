@@ -168,7 +168,7 @@ export default function ReminderWidget() {
                         key={tasks.length}  
                         >
 
-                        <Button
+                        <Button id={"new-task-button"}
                             sx={{
                                 width:'100%',
                                 height:'100%',

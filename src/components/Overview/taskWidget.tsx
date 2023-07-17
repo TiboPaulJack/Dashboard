@@ -22,7 +22,10 @@ export default function TaskWidget  () {
 		return (
 			<div className={"task-widget"}>
 				<div className={"task-widget__container"}>
+
+				<div className={"task-widget__container-top"}>
 					<CalendarWidget/>
+				</div>
 				
 				<div className={"task-widget__container-bottom"}>
 					<ReminderWidget/>

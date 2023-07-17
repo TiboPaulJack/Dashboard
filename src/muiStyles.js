@@ -1,6 +1,6 @@
 import { createTheme } from '@mui/material/styles';
 
-const height = '10px';
+const height = '2vh';
 const padding = '10px';
 const borderRadius = '5px';
 
@@ -28,7 +28,7 @@ const textFieldStyles = {
         MuiSelect: {
             styleOverrides: {
                 select: {
-                    height: height,
+                    minheight: height,
                     borderRadius: borderRadius,
                     padding: padding,
                 },
@@ -38,7 +38,7 @@ const textFieldStyles = {
             styleOverrides: {
                 input: {
                     fontSize: '8px',
-                    height: '10px',
+                    height: height,
                 },
             },
         },

@@ -6,7 +6,7 @@
     width: 100%;
     gap: 0 ;
     box-sizing: border-box;
-    height: var(--container-height);
+    height: calc(100% - 12vh);
     border-radius: var(--border-radius);
     transition: gap 0.3s ease-in-out;
 }

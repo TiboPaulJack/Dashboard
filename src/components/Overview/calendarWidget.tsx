@@ -25,8 +25,8 @@ export default function CalendarWidget() {
         <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DateCalendar className={'calendarWidget'}
                 sx={{backgroundColor: 'var(--background-widget)',
-                    width: '100%',
-                    height: '100%',
+                    width: '100% !important',
+                    height: '100% !important',
                     borderRadius: 'var(--border-radius)'}}
                 slots={{
                     day: TaskDay,

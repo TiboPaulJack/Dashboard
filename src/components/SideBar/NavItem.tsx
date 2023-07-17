@@ -28,6 +28,9 @@ export default function NavItem  ({title}) {
 			if(location.pathname === `/${title.toLowerCase()}`){
 				setIsFocused(true)
 			}
+			if(location.pathname === "/" && title === "Dashboard"){
+				setIsFocused(true)
+			}
 		}, [location.pathname]);
 
 		const handleClick = () => {
