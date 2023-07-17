@@ -21,6 +21,7 @@ export default function App() {
 
 
 
+
     useLayoutEffect(() => {
         const storedTheme = localStorage.getItem('theme');
         !storedTheme && localStorage.setItem('theme', 'dark');
@@ -32,7 +33,8 @@ export default function App() {
     }, []);
 
     return (
-
+        <StyledEngineProvider injectFirst>
+            <ThemeProvider theme={themeObject}>
                 <BrowserRouter>
                     <ErrorBoundary>
                         <Routes>
@@ -43,5 +45,7 @@ export default function App() {
                         </Routes>
                     </ErrorBoundary>
                 </BrowserRouter>
+            </ThemeProvider>
+        </StyledEngineProvider>
     );
 }
