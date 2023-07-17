@@ -32,9 +32,8 @@ export default function App() {
         }
     }, []);
 
-
     return (
-        <StyledEngineProvider injectFirst>
+        <StyledEngineProvider injectFirst key={theme}>
             <ThemeProvider theme={themeObject}>
                 <BrowserRouter>
                     <ErrorBoundary>
