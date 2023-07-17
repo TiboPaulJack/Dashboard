@@ -58,7 +58,7 @@ const buttonStyle = {
                 width:'30%',
                 height: '43%',
                 boxSizing: 'border-box',
-                backgroundColor: '#2f302f'
+                backgroundColor: '#33373A'
             }}
         >
             <h2 className={"auth_title"}>Login</h2>

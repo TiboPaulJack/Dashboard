@@ -6,13 +6,12 @@
     width: 100vw;
     justify-content: center;
     align-items: center;
-    background-color: #2f302f;
+    background-color: #252728;
 }
 
 .auth_title{
-    margin: auto auto;
     letter-spacing: 5px;
-    margin-bottom: auto;
+    margin: auto;
 }
 
 .help_lost{
