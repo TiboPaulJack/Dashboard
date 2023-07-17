@@ -1,6 +1,6 @@
 import '../assets/css/app.css'
 import '../assets/css/mediaQueries.css'
-import {useEffect} from "react";
+import {useEffect, useLayoutEffect} from "react";
 import {ThemeProvider} from "@mui/material/styles";
 import {darkTheme, lightTheme} from "../muiStyles.js";
 import Auth from "./auth/auth";
@@ -22,7 +22,7 @@ export default function App() {
 
 
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         const storedTheme = localStorage.getItem('theme');
         !storedTheme && localStorage.setItem('theme', 'dark');
         if (storedTheme === 'dark') {

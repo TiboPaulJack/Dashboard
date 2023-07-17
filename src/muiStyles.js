@@ -4,7 +4,7 @@ const height = '2vh';
 const padding = '10px';
 const borderRadius = '5px';
 
-const textFieldStyles = {
+export const textFieldStyles = {
     components: {
         MuiButton: {
             styleOverrides: {
