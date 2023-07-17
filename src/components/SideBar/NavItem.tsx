@@ -1,11 +1,21 @@
 import {useLocation, useNavigate} from "react-router-dom";
-import {logOut} from "../../redux/reducers/auth";
 import {useDispatch} from "react-redux";
 import {setInventoryFocusOpen} from "../../redux/reducers/config";
 import { useEffect } from "react";
 import { useState } from "react";
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import Typography from "@mui/material/Typography";
+import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
+import SellIcon from '@mui/icons-material/Sell';
+import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
+import PersonIcon from '@mui/icons-material/Person';
+import TuneIcon from '@mui/icons-material/Tune';
+import ShowChartIcon from '@mui/icons-material/ShowChart';
+import LogoutIcon from '@mui/icons-material/Logout';
+import EventIcon from '@mui/icons-material/Event';
+import { Stack } from "@mui/material";
 
-const NavItem = ({title, icon }) => {
+export default function NavItem  ({title}) {
 
 		const [isFocused, setIsFocused] = useState(false);
 
@@ -36,17 +46,35 @@ const NavItem = ({title, icon }) => {
 		}
 
 
-		return (
-			<div className={isFocused ? "NavItem focused" : "NavItem"}
-					 onClick={handleClick}
-			>
-					<div className={"icon"}
-							 style={{backgroundImage: `url(${icon})`}}>
-					</div>
-					<div className={"title"}>{title}</div>
-			</div>
-		)};
+	return (
+		<div
+			className={isFocused ? "NavItem focused" : "NavItem"}
+			onClick={handleClick}
+		>
 
-export default NavItem;
+			<Stack direction={'row'} alignItems={'center'} spacing={2}>
+				{title === "Dashboard" && <DashboardIcon/>}
+				{title === "Inventory" && <FormatListBulletedIcon/>}
+				{title === "Product" && <SellIcon/>}
+				{title === "Logout" && <LogoutIcon/>}
+				{title === "Tasks" && <EventIcon/>}
+				{title === "Charts" && <ShowChartIcon/>}
+				{title === "Team" && <PeopleAltIcon/>}
+				{title === "Profile" && <PersonIcon/>}
+				{title === "Settings" && <TuneIcon/>}
+
+				<Typography
+					sx={{
+						fontFamily: 'var(--font-primary)',
+						fontSize: '1em'
+					}}
+				>
+					{title}
+				</Typography>
+			</Stack>
+		</div>
+	)};
+
+
 
 
