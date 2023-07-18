@@ -85,7 +85,6 @@ export default function SearchBar() {
 						InputProps={{
 							...params.InputProps,
 							type: 'search',
-							disableOutline: true,
 							disableUnderline: true,
 							sx: {
 								borderRadius: '10px',

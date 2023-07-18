@@ -88,7 +88,7 @@ export default function ReminderWidget() {
     
     return (
         pendingTasks.length !== 0 ?
-        <List ref={listRef} sx={{overflow: 'auto', height: '100%', p: 0,}}>
+        <List ref={listRef} sx={{overflow: 'auto', height: '100%',width:'100%', p: 0,}}>
         {pendingTasks
             .filter((task) => task.status === "pending")
             .map((task, index) => {
@@ -99,6 +99,7 @@ export default function ReminderWidget() {
                     backgroundColor: `${task.color}`,
                     color: 'white',
                     height: selected === index ? '66%' : 'calc(34.2% - 10px)',
+                    width:'100% !important',
                     transition: 'height 0.5s',
                     '&:not(:last-child)': {
                         marginBottom: '10px',
@@ -108,6 +109,7 @@ export default function ReminderWidget() {
                     <ListItem
                     sx={{
                         height: '100%',
+                        width:'100% !important',
                         display: 'flex',
                         flexDirection: 'column',
                     }}
