@@ -6,6 +6,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../../redux/store";
 import {User} from "../../types";
 import {getUsers} from "../../api/user";
+import {CircularProgress} from "@mui/material";
 
 
 
@@ -17,16 +18,36 @@ export default function TeamMgmt () {
     const users = useSelector((state : RootState) => state.user.users);
     const newUser = useSelector((state : RootState) => state.user.newUser);
     const teamFormOpen = useSelector((state : RootState) => state.config.teamFormOpen);
+    const [isloading, setIsLoading] = useState(true);
 
 
     useEffect(() => {
         getUsers()
+            .then((response) => {
+                setTimeout(() => {
+                    setIsLoading(false);
+                }, 1000);
+            });
     }, [newUser, users, selectedUser]);
 
     return(
       <div className={teamFormOpen ? "containerTeam teamGap": "containerTeam"}>
-          <TeamTable/>
-          <Modifier/>
+          {
+              isloading
+                  ?
+                      <>
+                          <div className={teamFormOpen ? "team__table hidden" : "team__table"}>
+                              <CircularProgress color={'inherit'} sx={{margin: 'auto'}}/>
+                          </div>
+                          <Modifier/>
+                      </>
+                  :
+                      <>
+                          <TeamTable/>
+                          <Modifier/>
+                      </>
+
+          }
       </div>
     );
 };

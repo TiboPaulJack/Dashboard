@@ -12,8 +12,11 @@
     --box-shadow:0 5px 15px rgba(0, 0, 0, 0.3);
     --container-height:calc(100% - 8vh - 4vh);
     --container-height-mobile:calc(100% - 140px);
-    --background-widget: #a3a5a9;
+    --background-color: #FFFFFF;
+    --background-widget: #F2F2F2;
     --background-widget-secondary: #ADD0C0;
+    --text-color: #393939;
+    --third-color: #a1a9ab;
     --border-radius-bar: 2px;
     --blue-matisse: #245FA0;
     --confirm-color: #9CF332;
@@ -21,9 +24,6 @@
     --danger-color: #E34430;
     --border-radius:5px;
     --font-primary: 'Raleway', sans-serif;
-    --text-color: #393939;
-    --third-color: #a1a9ab;
-    --background-color: #cccdd1;
     --text-contrast-color: white;
     --transition-background: background-color 0.2s linear, color 0.1s ease ;
     --hero-svg:url("/src/assets/World Map-93647f2b.svg");

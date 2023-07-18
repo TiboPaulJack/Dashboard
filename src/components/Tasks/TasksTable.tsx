@@ -17,8 +17,6 @@ import {useState} from "react";
 export default function TasksTable () {
 
 
-
-
     const dispatch = useDispatch();
     const tasks = useSelector((state: any) => state.task.tasks);
     const [updateKey, setUpdateKey] = useState(Math.random());

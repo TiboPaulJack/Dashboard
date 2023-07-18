@@ -143,6 +143,7 @@
         gap: 3vh;
     }
         .task-widget__container-top{
+            display: flex;
             height: 45%;
             max-height: 50%;
             width: 100%;
@@ -156,8 +157,10 @@
 
 
         .task-widget__container-bottom{
+            display: flex;
             height: 55%;
             box-sizing: border-box;
+            border-radius: var(--border-radius);
             overflow: auto;
         }
         .task-widget__container-bottom-empty{
@@ -166,6 +169,7 @@
             align-items: center;
             border-radius: var(--border-radius);
             box-sizing: border-box;
+            width: 100%;
             height: 100%;
             border: var(--background-widget) 3px solid;;
         }

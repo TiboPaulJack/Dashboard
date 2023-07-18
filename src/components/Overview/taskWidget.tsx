@@ -3,9 +3,10 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import ReminderWidget from "./ReminderWidget";
 import {useEffect} from "react";
 import {getTasks} from "../../api/task";
-import { Box, Typography } from "@mui/material";
+import {Box, CircularProgress, Typography} from "@mui/material";
 import { DateCalendar } from '@mui/x-date-pickers';
 import CalendarWidget from './calendarWidget';
+import { useState } from 'react';
 
 
 
@@ -13,8 +14,16 @@ import CalendarWidget from './calendarWidget';
 
 export default function TaskWidget  () {
 
+	const [isloading, setIsLoading] = useState(true);
+
 	useEffect(() => {
-		getTasks();
+		getTasks()
+			.then((response) => {
+				setTimeout(() => {
+					setIsLoading(false);
+				}, 1000);
+			});
+
 	}, []);
 
 	
@@ -24,11 +33,31 @@ export default function TaskWidget  () {
 				<div className={"task-widget__container"}>
 
 				<div className={"task-widget__container-top"}>
-					<CalendarWidget/>
+					{
+						isloading
+							?
+								<CircularProgress
+									color={'inherit'}
+									sx={{margin: 'auto'}}
+								/>
+							:
+								<CalendarWidget/>
+					}
 				</div>
 				
 				<div className={"task-widget__container-bottom"}>
-					<ReminderWidget/>
+					{
+						isloading
+							?
+								<div className={"task-widget__container-bottom-empty"}>
+									<CircularProgress
+										color={'inherit'}
+										sx={{margin: 'auto'}}
+									/>
+								</div>
+							:
+								<ReminderWidget/>
+					}
 				</div>
 				</div>
 			</div>

@@ -7,7 +7,7 @@ import {DatePicker} from "@mui/x-date-pickers";
 import {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {getUsers} from "../../api/user";
-import {clearNewTask, clearSelectedTask, setTasks, setSelectedTask} from "../../redux/reducers/task";
+import {clearNewTask, clearSelectedTask, setTasks, setSelectedTask, setRefresh} from "../../redux/reducers/task";
 import {createTask, deleteTask, updateTask} from "../../api/task";
 import {Task} from "../../types";
 import {setNewTask} from "../../redux/reducers/task";
@@ -59,11 +59,10 @@ export default function Form () {
 
 
     const handleDeleteSelected = () => {
-    
         tasks.map((task: Task) => {
             if(task.checked){
                 deleteTask(task.id);
-                dispatch(setTasks(tasks.filter((task: Task) => task.id !== task.id)));
+                dispatch(setRefresh(true))
             }
         });
         dispatch(clearSelectedTask());
@@ -73,9 +72,10 @@ export default function Form () {
         if(Object.values(selectedTask).length !== 0){
             updateTask(selectedTask.id, selectedTask)
             dispatch(clearSelectedTask())
+            dispatch(setRefresh(true))
         } else {
             createTask(newTask);
-            dispatch(setTasks([...tasks, newTask]));
+            dispatch(setRefresh(true))
             dispatch(clearNewTask());
         }
     }

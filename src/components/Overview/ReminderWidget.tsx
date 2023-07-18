@@ -71,8 +71,7 @@ export default function ReminderWidget() {
     
     const pendingTasks = tasks.filter((task) => task.status === "pending");
 
-    console.log(pendingTasks)
-    
+
     let heightPlaceholderEmptyOtherTasks : string;
     if (pendingTasks.length < 2 && selected !== null) {
         heightPlaceholderEmptyOtherTasks = 'calc(34.2% - 10px)'; 
