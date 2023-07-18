@@ -31,24 +31,25 @@ export default function Tasks () : JSX.Element {
         dispatch(setRefresh(false))
     }, [refresh === true]);
 
+
     return (
         <div className={"containerTasks"}>
-                <div className={"tasks"}>
-                            {isloading
-                                ?
-                                <>
-                                    <Header/>
-                                    <div className={"table__container flex"}>
-                                        <CircularProgress color={'inherit'} sx={{margin: 'auto'}}/>
-                                    </div>
-                                </>
-                                :
-                                <>
-                                    <Header/>
-                                    <TasksTable/>
-                                </>
-                            }
-                </div>
+            <div className={"tasks"}>
+                {isloading
+                    ?
+                    <>
+                        <Header/>
+                        <div className={"table__container flex"}>
+                            <CircularProgress color={'inherit'} sx={{margin: 'auto'}}/>
+                        </div>
+                    </>
+                    :
+                    <>
+                        <Header/>
+                        <TasksTable/>
+                    </>
+                }
+            </div>
             <Form/>
         </div>
     )

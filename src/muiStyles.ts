@@ -49,6 +49,7 @@ export const textFieldStyles = {
                 },
             },
         },
+
     },
 };
 
@@ -60,8 +61,8 @@ export const darkTheme = createTheme({
             main: '#a1a9ab',
         },
         text: {
-            primary: '#ffffff',
-            secondary: '#a1a9ab',
+            /*primary: '#ffffff',
+            secondary: '#a1a9ab',*/
         },
     },
     ...textFieldStyles,
@@ -74,8 +75,8 @@ export const lightTheme = createTheme({
             main: '#000000',
         },
         text: {
-            primary: '#000000',
-            secondary: '#888484',
+            primary: '#393939',
+            secondary: '#333030',
         },
     },
     ...textFieldStyles,
