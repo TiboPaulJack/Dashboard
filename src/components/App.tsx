@@ -1,8 +1,11 @@
-import '../assets/css/app.css'
-import '../assets/css/mediaQueries.css'
-import {useEffect, useLayoutEffect} from "react";
+import {StyledEngineProvider} from "@mui/material";
+
 import {ThemeProvider} from "@mui/material/styles";
 import {darkTheme, lightTheme} from "../muiStyles";
+import '../assets/css/app.css'
+import '../assets/css/mediaQueries.css'
+import '../assets/css/styles.css'
+import {useLayoutEffect} from "react";
 import Auth from "./auth/auth";
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../redux/store";
@@ -10,7 +13,7 @@ import {setDarkTheme, setLightTheme} from "../redux/reducers/config";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Dashboard from "./Dashboard";
 import ErrorBoundary from './ErrorBoundary';
-import {StyledEngineProvider} from "@mui/material";
+
 
 
 export default function App() {
@@ -18,8 +21,6 @@ export default function App() {
     const theme = useSelector((state : RootState) => state.config.theme);
     const loggedIn = useSelector((state : RootState) => state.auth.isLogged);
     let themeObject = theme === 'dark' ? darkTheme : lightTheme;
-
-
 
 
     useLayoutEffect(() => {
@@ -31,6 +32,8 @@ export default function App() {
             dispatch(setLightTheme());
         }
     }, []);
+
+
 
     return (
         <StyledEngineProvider injectFirst>

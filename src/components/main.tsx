@@ -1,9 +1,8 @@
-import '../assets/css/styles.css'
+
 // @ts-ignore
 import React from 'react'
 // @ts-ignore
 import ReactDOM from 'react-dom/client'
-
 import App from './App.js'
 import {store} from "../redux/store";
 import {Provider} from "react-redux";
