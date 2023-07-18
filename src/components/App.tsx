@@ -1,7 +1,4 @@
-import {StyledEngineProvider} from "@mui/material";
 
-import {ThemeProvider} from "@mui/material/styles";
-import {darkTheme, lightTheme} from "../muiStyles";
 import '../assets/css/app.css'
 import '../assets/css/mediaQueries.css'
 import '../assets/css/styles.css'
@@ -15,12 +12,10 @@ import Dashboard from "./Dashboard";
 import ErrorBoundary from './ErrorBoundary';
 
 
-
 export default function App() {
+
     const dispatch = useDispatch();
-    const theme = useSelector((state : RootState) => state.config.theme);
     const loggedIn = useSelector((state : RootState) => state.auth.isLogged);
-    let themeObject = theme === 'dark' ? darkTheme : lightTheme;
 
 
     useLayoutEffect(() => {
@@ -34,21 +29,16 @@ export default function App() {
     }, []);
 
 
-
     return (
-        <StyledEngineProvider injectFirst>
-            <ThemeProvider theme={themeObject}>
-                <BrowserRouter>
-                    <ErrorBoundary>
-                        <Routes>
-                            {!loggedIn && <Route path="/*" element={<Auth />} />}
-                            {loggedIn && (
-                                <Route path="/*" element={<Dashboard />} />
-                            )}
-                        </Routes>
-                    </ErrorBoundary>
-                </BrowserRouter>
-            </ThemeProvider>
-        </StyledEngineProvider>
+        <BrowserRouter>
+            <ErrorBoundary>
+                <Routes>
+                    {!loggedIn && <Route path="/*" element={<Auth />} />}
+                    {loggedIn && (
+                        <Route path="/*" element={<Dashboard />} />
+                    )}
+                </Routes>
+            </ErrorBoundary>
+        </BrowserRouter>
     );
 }
