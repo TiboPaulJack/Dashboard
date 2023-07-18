@@ -48,6 +48,9 @@ export default function NavItem  ({title}) {
 				}
 		}
 
+		const iconStyle = {
+			fontSize: '1.3em',
+		}
 
 	return (
 		<div
@@ -62,15 +65,15 @@ export default function NavItem  ({title}) {
 				ml={2}
 				sx={{boxSizing: 'border-box'}}
 			>
-				{title === "Dashboard" && <DashboardIcon/>}
-				{title === "Inventory" && <FormatListBulletedIcon/>}
-				{title === "Product" && <SellIcon/>}
-				{title === "Logout" && <LogoutIcon/>}
-				{title === "Tasks" && <EventIcon/>}
-				{title === "Charts" && <ShowChartIcon/>}
-				{title === "Team" && <PeopleAltIcon/>}
-				{title === "Profile" && <PersonIcon/>}
-				{title === "Settings" && <TuneIcon/>}
+				{title === "Dashboard" && <DashboardIcon sx={iconStyle}/>}
+				{title === "Inventory" && <FormatListBulletedIcon sx={iconStyle}/>}
+				{title === "Product" && <SellIcon sx={iconStyle}/>}
+				{title === "Logout" && <LogoutIcon sx={iconStyle}/>}
+				{title === "Tasks" && <EventIcon sx={iconStyle}/>}
+				{title === "Charts" && <ShowChartIcon sx={iconStyle}/>}
+				{title === "Team" && <PeopleAltIcon sx={iconStyle}/>}
+				{title === "Profile" && <PersonIcon sx={iconStyle}/>}
+				{title === "Settings" && <TuneIcon sx={iconStyle}/>}
 
 				<Typography
 					sx={{
