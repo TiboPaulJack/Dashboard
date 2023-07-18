@@ -8,7 +8,9 @@ import App from './App';
 import { store } from '../redux/store';
 import { Provider } from 'react-redux';
 
+localStorage.setItem('theme', 'dark');
 const theme = localStorage.getItem('theme') === 'dark' ? darkTheme : lightTheme;
+
 
 ReactDOM.render(
     <StyledEngineProvider injectFirst>
