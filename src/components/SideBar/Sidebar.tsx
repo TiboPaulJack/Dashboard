@@ -1,7 +1,5 @@
 import '../../assets/css/sidebar.css'
 import NavList from "./NavList";
-import NavSettings from "./NavSettings";
-import DarkModeSwitch from "./DarkModeSwitch";
 import {useDispatch, useSelector} from "react-redux";
 import MenuIcon from "@mui/icons-material/Menu";
 import {setIsSidebarOpen} from "../../redux/reducers/config";
@@ -35,7 +33,9 @@ export default function Sidebar () {
                   />
               </div>
               <div className={"top-separation"}/>
-              <NavList />
+              <NavList>
+                  <div className={"line-separation"}/>
+              </NavList>
 
           </div>
       </div>

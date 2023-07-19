@@ -1,10 +1,9 @@
 // @ts-ignore
 import data from "../../../data/navList.json";
 import NavItem from "./NavItem";
-import NavSettings from "./NavSettings";
 import DarkModeSwitch from "./DarkModeSwitch";
 
-export default function NavList  ()  {
+export default function NavList  ({children})  {
 
 
 
@@ -19,7 +18,18 @@ export default function NavList  ()  {
     return (
         <div className="navList">
             {navItems}
-            <NavSettings />
+            {children}
+            <NavItem
+                key={"Account"}
+                title={"Profile"}
+            />
+            <NavItem key={"settings"}
+                     title={"Settings"}
+            />
+            <NavItem key={"logout"}
+                     title={"Logout"}
+
+            />
             <DarkModeSwitch/>
         </div>
     )

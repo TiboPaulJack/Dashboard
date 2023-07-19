@@ -1,7 +1,7 @@
 import '../assets/css/app.css'
 import '../assets/css/mediaQueries.css'
 import '../assets/css/styles.css'
-import {useLayoutEffect, useState, useEffect} from "react";
+import {useLayoutEffect} from "react";
 import Auth from "./auth/auth";
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../redux/store";
@@ -27,6 +27,14 @@ export default function App() {
         } else {
             dispatch(setNightMode(false));
         }
+
+        const appHeight = () => {
+            const doc = document.documentElement;
+            doc.style.setProperty("--app-height", `${window.innerHeight}px`);
+        };
+        window.addEventListener("resize", appHeight);
+        appHeight();
+
     }, []);
 
 

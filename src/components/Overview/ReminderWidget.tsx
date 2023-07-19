@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { updateTask } from "../../api/task";
 import {setSelectedTask, setTasks} from "../../redux/reducers/task";
+import {setNightMode} from "../../redux/reducers/config";
 
 export default function ReminderWidget() {
     
@@ -21,7 +22,8 @@ export default function ReminderWidget() {
     const [selected, setSelected] = useState(null);
     const [isLastElementClicked, setIsLastElementClicked] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
-    
+    const nightMode = useSelector((state: any) => state.config.nightMode);
+
     const tasks = useSelector((state: any) => state.task.tasks);
     const taskRefs = useRef([]);
     const listRef = useRef(null);
@@ -159,16 +161,14 @@ export default function ReminderWidget() {
  
                     <Paper elevation={4}
                     sx={{
-                        backgroundColor: `inherit`,
                         boxSizing: 'border-box',
-                        color: 'white',
-                        height: `${heightPlaceholderEmptyOtherTasks}`,
+                        backgroundColor: nightMode ?'var(--background-widget)': 'rgba(199,204,204,0.61)',
+                        height:  `${heightPlaceholderEmptyOtherTasks}` ,
                         margin: '0',
 
                     }}
                         key={tasks.length}  
                         >
-
                         <Button id={"new-task-button"}
                             sx={{
                                 width:'100%',

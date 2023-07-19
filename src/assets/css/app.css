@@ -16,6 +16,7 @@
     --background-widget: #F2F2F2;
     --background-widget-secondary: #ADD0C0;
     --text-color: #393939;
+    --app-height: 100vh;
     --third-color: #a1a9ab;
     --border-radius-bar: 2px;
     --blue-matisse: #245FA0;
@@ -63,7 +64,7 @@ body{
     display: flex;
     flex-direction: row;
     width: 100vw;
-    height: 100vh;
+    height: var(--app-height);
     margin: 0;
     background-color: var(--background-color);
     background-repeat: no-repeat;
