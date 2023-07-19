@@ -6,6 +6,7 @@ export interface UserState {
     selectedUser: User | null;
     newUser: User,
     isLoading : boolean,
+    refresh : boolean,
 }
 
 const initialState: UserState = {
@@ -23,6 +24,7 @@ const initialState: UserState = {
         access: '',
     },
     isLoading : false,
+    refresh : false,
 
 };
 
@@ -54,6 +56,9 @@ const userSlice = createSlice({
         },
         setIsLoading(state, action) {
             state.isLoading = action.payload;
+        },
+        setRefresh(state, action) {
+            state.refresh = action.payload;
         }
     },
 });
@@ -67,6 +72,7 @@ export const {
     removeIdFromSelectedUser,
     setSelectedUserById,
     setIsLoading,
+    setRefresh,
 
 
 

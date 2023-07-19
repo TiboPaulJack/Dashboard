@@ -9,4 +9,15 @@
     box-shadow: var(--box-shadow);
     border-radius: var(--border-radius);
     background-color: var(--background-widget);
+    overflow: auto;
+}
+
+.mobileNav .settings{
+    flex-direction: row;
+    justify-content: space-between;
+    width: fit-content;
+}
+
+.mobileNav .focused{
+    background-color: initial;
 }

@@ -7,6 +7,7 @@ import {RootState} from "../../redux/store";
 import {User} from "../../types";
 import {getUsers} from "../../api/user";
 import {CircularProgress} from "@mui/material";
+import {setRefresh} from "../../redux/reducers/user";
 
 
 
@@ -18,12 +19,14 @@ export default function TeamMgmt () {
     const users = useSelector((state : RootState) => state.user.users);
     const newUser = useSelector((state : RootState) => state.user.newUser);
     const teamFormOpen = useSelector((state : RootState) => state.config.teamFormOpen);
-    const isloading = useSelector((state : any) => state.user.isLoading)
+    const isloading = useSelector((state : any) => state.user.isLoading);
+    const refresh = useSelector((state : any) => state.user.refresh);
 
 
     useEffect(() => {
-        getUsers()
-    }, [newUser, users, selectedUser]);
+        getUsers();
+        dispatch(setRefresh(false))
+    }, [newUser, refresh === true]);
 
     return(
       <div className={teamFormOpen ? "containerTeam teamGap": "containerTeam"}>

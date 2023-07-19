@@ -10,8 +10,14 @@
     overflow: hidden;
 }
 
+.sideBoxClosed{
+    width: 8vw;
+}
+
 .sidebar .blankSpace{
     min-height: 12vh;
+    display: flex;
+    justify-content: center;
 }
 
 .top-separation{
@@ -29,10 +35,13 @@
 
 .NavItem{
     display: flex;
+    width: 100%;
     height: 7vh;
     font-size: 0.8em;
-
     cursor: pointer;
+}
+.navItemSideBarClose{
+    justify-content: center;
 }
     .NavItem:hover{
         background-color: var(--background-widget-secondary);
@@ -56,6 +65,5 @@
 .settings{
     display: flex;
     flex-direction: column;
-    margin-top: 30px;
 }
 

@@ -9,7 +9,7 @@ import {
 	clearNewUser,
 	clearSelectedUser,
 	removeIdFromSelectedUser,
-	setNewUser,
+	setNewUser, setRefresh,
 	setSelectedUser
 } from "../../redux/reducers/user";
 import {createUser, updateUser, deleteUser} from "../../api/user";
@@ -41,8 +41,6 @@ const titles = [
 	"HR Specialist",
 	"Chief Sales Officer",
 ]
-
-
 
 
 export default function Modifier  ()  {
@@ -91,6 +89,7 @@ export default function Modifier  ()  {
 			await updateUser(selectedUser);
 			dispatch(clearSelectedUser());
 			dispatch(setTeamFormOpen(false));
+			dispatch(setRefresh(true))
 		}
 	}
 

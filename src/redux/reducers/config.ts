@@ -9,6 +9,7 @@ export interface ConfigState {
     inventoryFocusOpen: boolean;
     searchResults: [];
     tasksFilter: string;
+    isSidebarOpen : boolean,
 
 }
 
@@ -21,6 +22,7 @@ const initialState: ConfigState = {
     inventoryFocusOpen: false,
     searchResults: [],
     tasksFilter: 'pending',
+    isSidebarOpen: true,
 };
 
 const configSlice = createSlice({
@@ -54,6 +56,9 @@ const configSlice = createSlice({
         setTasksFilter(state, action) {
             state.tasksFilter = action.payload;
         },
+        setIsSidebarOpen(state, action) {
+            state.isSidebarOpen = action.payload;
+        }
     },
 });
 
@@ -67,6 +72,8 @@ export const {
     setEditProductMode,
     setSearch,
     setTasksFilter,
+    setIsSidebarOpen,
+
 
 } = configSlice.actions;
 

@@ -54,6 +54,7 @@ export default function SearchBar() {
 	return (
 		<>
 			<Autocomplete
+				id={'searchBar'}
 				freeSolo
 				disableClearable
 				key={key}
@@ -73,7 +74,7 @@ export default function SearchBar() {
 					handleSearch(searchValue);
 				}}
 				sx={{
-					width: 400,
+					width: '40%',
 					alignSelf: 'center',
 					backgroundColor: 'var(--background-color)',
 					borderRadius:'10px'

@@ -1,5 +1,5 @@
 import {useLocation, useNavigate} from "react-router-dom";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {setInventoryFocusOpen} from "../../redux/reducers/config";
 import { useEffect } from "react";
 import { useState } from "react";
@@ -18,6 +18,7 @@ import { Stack } from "@mui/material";
 export default function NavItem  ({title}) {
 
 		const [isFocused, setIsFocused] = useState(false);
+		const isSidebarOpen = useSelector((state : any) => state.config.isSidebarOpen)
 
 		const navigate = useNavigate();
 		const dispatch = useDispatch()
@@ -52,9 +53,11 @@ export default function NavItem  ({title}) {
 			fontSize: '1.3em',
 		}
 
+
 	return (
 		<div
-			className={isFocused ? "NavItem focused" : "NavItem"}
+			className={ (isFocused ? "NavItem focused" : "NavItem") + (!isSidebarOpen ? " navItem navItemSideBarClose" : "") }
+
 			onClick={handleClick}
 		>
 
@@ -62,7 +65,7 @@ export default function NavItem  ({title}) {
 				direction={'row'}
 				alignItems={'center'}
 				spacing={2}
-				ml={2}
+				ml={isSidebarOpen && 2}
 				sx={{boxSizing: 'border-box'}}
 			>
 				{title === "Dashboard" && <DashboardIcon sx={iconStyle}/>}
@@ -74,15 +77,17 @@ export default function NavItem  ({title}) {
 				{title === "Team" && <PeopleAltIcon sx={iconStyle}/>}
 				{title === "Profile" && <PersonIcon sx={iconStyle}/>}
 				{title === "Settings" && <TuneIcon sx={iconStyle}/>}
-
-				<Typography
-					sx={{
-						fontFamily: 'var(--font-primary)',
-						fontSize: '1em'
-					}}
-				>
-					{title}
-				</Typography>
+				{
+					isSidebarOpen &&
+					<Typography
+						sx={{
+							fontFamily: 'var(--font-primary)',
+							fontSize: '1em'
+						}}
+					>
+						{title}
+					</Typography>
+				}
 			</Stack>
 		</div>
 	)};

@@ -9,9 +9,16 @@
     background-color: #252728;
 }
 
+.auth_page .auth_container{
+   box-sizing: border-box;
+    height: 50vh;
+}
+
 .auth_title{
     letter-spacing: 5px;
     margin: auto;
+    box-sizing: border-box;
+    padding-top: 20px;
 }
 
 .help_lost{
@@ -65,10 +72,10 @@
 }
 
 
-@media screen and (max-width: 400){
+@media screen and (max-width: 400px){
 
     .auth_page .auth_container{
-        width: 80%;
+        width: 90% !important;
         display: flex;
         flex-direction: column;
         justify-content: center;
