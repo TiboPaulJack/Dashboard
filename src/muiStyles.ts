@@ -61,8 +61,8 @@ export const darkTheme = createTheme({
             main: '#a1a9ab',
         },
         text: {
-            /*primary: '#ffffff',
-            secondary: '#a1a9ab',*/
+            primary: '#ffffff',
+            secondary: '#a1a9ab',
         },
     },
     ...textFieldStyles,

@@ -6,9 +6,8 @@ import {setIsLoading, setTasks} from "../redux/reducers/task";
 
 export const getTasks = async () => {
 
-
     try {
-        store.dispatch(setIsLoading(true))
+        store.dispatch(setIsLoading(true));
         const response = await axiosInstance.get('/tasks');
         await store.dispatch(setTasks(response.data));
         store.dispatch(setIsLoading(false))

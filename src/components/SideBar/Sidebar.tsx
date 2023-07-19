@@ -36,8 +36,7 @@ export default function Sidebar () {
               </div>
               <div className={"top-separation"}/>
               <NavList />
-              <NavSettings />
-              <DarkModeSwitch/>
+
           </div>
       </div>
     )};

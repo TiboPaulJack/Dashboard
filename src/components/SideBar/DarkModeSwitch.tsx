@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import {setDarkTheme, setLightTheme} from "../../redux/reducers/config";
+import {useState, useEffect, useLayoutEffect} from "react";
+import {setNightMode} from "../../redux/reducers/config";
 import {useDispatch, useSelector} from "react-redux";
 import { Box, Switch } from "@mui/material";
 import { NightsStay, WbSunny } from "@mui/icons-material";
@@ -7,86 +7,94 @@ import { NightsStay, WbSunny } from "@mui/icons-material";
 export default function DarkModeSwitch () {
 
 
-		const isSidebarOpen = useSelector((state : any) => state.config.isSidebarOpen);
-		const theme = useSelector((state : any) => state.config.theme);
-		const [isChecked, setIsChecked] = useState(false);
-		const dispatch = useDispatch();
-
-		useEffect(() => {
-			if (isChecked) {
-				document.documentElement.setAttribute("data-theme", "dark");
-			} else {
-				document.documentElement.setAttribute("data-theme", "light");
-			}
+		useLayoutEffect(() => {
+			(window.innerWidth < 768) ? setIsSmallScreen(true) : setIsSmallScreen(false)
 		}, []);
 
+		const isSidebarOpen = useSelector((state : any) => state.config.isSidebarOpen);
+		const nightMode = useSelector((state : any) => state.config.nightMode);
+		const [isChecked, setIsChecked] = useState(false);
+		const [isSmallScreen, setIsSmallScreen] = useState(false);
+		const dispatch = useDispatch();
+
+
 		useEffect(() => {
-				const currentTheme = localStorage.getItem("theme");
-				if (currentTheme) {
-						document.documentElement.setAttribute("data-theme", currentTheme);
-						setIsChecked(currentTheme === "dark")
+				if (nightMode) {
+						setIsChecked(true);
 				}
-			}, [isChecked]);
+			}, []);
 
 		const handleClickDarkModeChange = () => {
-			if(theme === "dark"){
-				dispatch(setLightTheme());
+			if(nightMode === true){
+				dispatch(setNightMode(false));
 			}else{
-				dispatch(setDarkTheme());
+				dispatch(setNightMode(true));
 			}
 		};
 
 		const handleDarkModeChange = () => {
 				if (isChecked) {
-						localStorage.setItem("theme", "light");
-						document.documentElement.setAttribute("data-theme", "light");
+						dispatch(setNightMode(false));
 						setIsChecked(false);
-						dispatch(setDarkTheme());
 				} else {
-						localStorage.setItem("theme", "dark");
-						document.documentElement.setAttribute("data-theme", "dark");
+						dispatch(setNightMode(true));
 						setIsChecked(true);
 				}
 		};
 
 		return (
-<>
-			{
-				isSidebarOpen ?
-				<Box sx={{display: 'flex', alignItems: 'center', m: 'auto auto 15px auto', justifySelf: 'flex-end'}}>
-					<WbSunny fontSize="small"/>
-					<Switch
-						type="checkbox"
-						id="checkbox"
-						checked={isChecked}
-						onChange={handleDarkModeChange}
-						sx={{mx: 1}}
-					/>
-					<NightsStay fontSize="small"/>
-				</Box>
+			<>
+				{!isSmallScreen ?
+					(isSidebarOpen ?
+						<Box sx={{display: 'flex', alignItems: 'center', m: 'auto auto 15px auto', justifySelf: 'flex-end'}}>
+
+							<WbSunny fontSize="small"/>
+							<Switch
+								type="checkbox"
+								id="checkbox"
+								checked={isChecked}
+								onChange={handleDarkModeChange}
+								sx={{mx: 1}}
+							/>
+							<NightsStay fontSize="small"/>
+						</Box>
+						:
+						(
+							nightMode
+								?
+								<NightsStay
+									fontSize="small"
+									onClick={handleClickDarkModeChange}
+									sx={{cursor:'pointer', m:'auto'}}
+								/>
+								:
+								<WbSunny
+									fontSize="small"
+									onClick={handleClickDarkModeChange}
+									sx={{cursor:'pointer',  m:'auto'}}
+								/>
+						))
 					:
+					(
+						nightMode
+							?
+							<NightsStay
+								fontSize="small"
+								onClick={handleClickDarkModeChange}
+								sx={{cursor:'pointer', m:'auto'}}
+							/>
+							:
+							<WbSunny
+								fontSize="small"
+								onClick={handleClickDarkModeChange}
+								sx={{cursor:'pointer',  m:'auto'}}
+							/>
+					)
+				}
+			</>
 
+);
 
-
-			(
-				theme === "dark"
-				?
-				<NightsStay
-					fontSize="small"
-					onClick={handleClickDarkModeChange}
-					sx={{cursor:'pointer', m:'auto'}}
-				/>
-				:
-				<WbSunny
-					fontSize="small"
-					onClick={handleClickDarkModeChange}
-					sx={{cursor:'pointer',  m:'auto'}}
-				/>
-			)
-			}
-
-</>
-		);
 };
 
 

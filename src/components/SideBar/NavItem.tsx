@@ -1,7 +1,7 @@
 import {useLocation, useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {setInventoryFocusOpen} from "../../redux/reducers/config";
-import { useEffect } from "react";
+import {useEffect, useLayoutEffect} from "react";
 import { useState } from "react";
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import Typography from "@mui/material/Typography";
@@ -17,12 +17,24 @@ import { Stack } from "@mui/material";
 
 export default function NavItem  ({title}) {
 
+
 		const [isFocused, setIsFocused] = useState(false);
 		const isSidebarOpen = useSelector((state : any) => state.config.isSidebarOpen)
+		const [isSidebarAnimationEnded, setIsSidebarAnimationEnded] = useState(false)
 
 		const navigate = useNavigate();
 		const dispatch = useDispatch()
 		const location = useLocation();
+
+		useLayoutEffect(() => {
+			if(isSidebarOpen) {
+				setTimeout(() => {
+					setIsSidebarAnimationEnded(true)
+				}, 400);
+			}else{
+				setIsSidebarAnimationEnded(false)
+			}
+		}, [isSidebarOpen]);
 
 		useEffect(() => {
 			setIsFocused(false)
@@ -56,8 +68,11 @@ export default function NavItem  ({title}) {
 
 	return (
 		<div
-			className={ (isFocused ? "NavItem focused" : "NavItem") + (!isSidebarOpen ? " navItem navItemSideBarClose" : "") }
-
+			className={
+				(isFocused ? "NavItem focused" : "NavItem")
+					+
+				(!isSidebarOpen ? " navItem navItemSideBarClose" : "")
+			}
 			onClick={handleClick}
 		>
 
@@ -65,7 +80,6 @@ export default function NavItem  ({title}) {
 				direction={'row'}
 				alignItems={'center'}
 				spacing={2}
-				ml={isSidebarOpen && 2}
 				sx={{boxSizing: 'border-box'}}
 			>
 				{title === "Dashboard" && <DashboardIcon sx={iconStyle}/>}
@@ -78,9 +92,11 @@ export default function NavItem  ({title}) {
 				{title === "Profile" && <PersonIcon sx={iconStyle}/>}
 				{title === "Settings" && <TuneIcon sx={iconStyle}/>}
 				{
-					isSidebarOpen &&
+					isSidebarAnimationEnded &&
 					<Typography
+						id={"navItem-title"}
 						sx={{
+
 							fontFamily: 'var(--font-primary)',
 							fontSize: '1em'
 						}}

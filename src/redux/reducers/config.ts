@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
+import {darkTheme, lightTheme} from "../../muiStyles";
 
 export interface ConfigState {
-    theme: string;
+    nightMode: boolean;
     newUserMode: boolean;
     editUserMode: boolean;
     editProductMode: boolean;
@@ -10,11 +11,13 @@ export interface ConfigState {
     searchResults: [];
     tasksFilter: string;
     isSidebarOpen : boolean,
-
 }
 
+
+
+
 const initialState: ConfigState = {
-    theme: 'dark',
+    nightMode: null,
     newUserMode: false,
     editUserMode: false,
     editProductMode: false,
@@ -22,18 +25,22 @@ const initialState: ConfigState = {
     inventoryFocusOpen: false,
     searchResults: [],
     tasksFilter: 'pending',
-    isSidebarOpen: true,
+    isSidebarOpen: false,
 };
 
 const configSlice = createSlice({
     name: 'config',
     initialState,
     reducers: {
-        setDarkTheme(state) {
-            state.theme = 'dark';
-        },
-        setLightTheme(state) {
-            state.theme = 'light';
+        setNightMode(state, action) {
+            if(action.payload === true) {
+                document.body.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.body.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+            state.nightMode = action.payload;
         },
         setEditUserMode(state, action) {
             state.editUserMode = action.payload;
@@ -63,8 +70,7 @@ const configSlice = createSlice({
 });
 
 export const {
-    setDarkTheme,
-    setLightTheme,
+    setNightMode,
     setNewUserMode,
     setEditUserMode,
     setTeamFormOpen,

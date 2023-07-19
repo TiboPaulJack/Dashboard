@@ -99,7 +99,7 @@ main{
 .sideBox{
     display: flex;
     flex-direction: column;
-    width: 15%;
+    width: 15vw;
     height: 100%;
     gap: 4vh;
     transition: width 0.3s linear;
