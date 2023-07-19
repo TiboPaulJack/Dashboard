@@ -22,7 +22,7 @@ const initialState: ConfigState = {
     inventoryFocusOpen: false,
     searchResults: [],
     tasksFilter: 'pending',
-    isSidebarOpen: true,
+    isSidebarOpen: false,
 };
 
 const configSlice = createSlice({
