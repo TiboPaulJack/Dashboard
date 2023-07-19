@@ -13,15 +13,10 @@ export default function Inventory () {
 
     const dispatch = useDispatch()
     const isFocusOpen = useSelector((state: any) => state.config.inventoryFocusOpen)
-    const [isloading, setIsLoading] = useState(true);
+    const isloading = useSelector((state : any) => state.product.isLoading)
 
     useEffect(() => {
         getAllProducts()
-            .then((response) => {
-                setTimeout(() => {
-                    setIsLoading(false);
-                }, 1000);
-            });
     }, [isFocusOpen])
 
   return (

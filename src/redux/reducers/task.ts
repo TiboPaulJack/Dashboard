@@ -6,6 +6,7 @@ export interface TaskState {
     newTask: Task;
     selectedTask: Task;
     refresh: boolean;
+    isLoading : boolean;
 
 }
 
@@ -23,6 +24,7 @@ const initialState: TaskState = {
     },
     selectedTask: {} as Task,
     refresh: false,
+    isLoading: false,
 };
 
 
@@ -50,7 +52,11 @@ const taskSlice = createSlice({
         },
         setRefresh(state, action) {
             state.refresh = action.payload;
+        },
+        setIsLoading(state, action) {
+            state.isLoading = action.payload;
         }
+
 
     },
 });
@@ -63,6 +69,7 @@ export const {
     setSelectedTask,
     clearSelectedTask,
     setRefresh,
+    setIsLoading,
 
 
 } = taskSlice.actions;

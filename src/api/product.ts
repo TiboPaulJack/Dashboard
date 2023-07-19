@@ -1,14 +1,16 @@
 import {axiosInstance} from "./axiosInstance";
 import {store} from "../redux/store";
-import { allProducts } from '../redux/reducers/product';
+import {allProducts, setIsLoading} from '../redux/reducers/product';
 import {Product} from "../types";
 
 
 export const getAllProducts = async () => {
 
     try {
+        store.dispatch(setIsLoading(true))
         const response = await axiosInstance.get('/products');
-        store.dispatch(allProducts(response.data));
+        await  store.dispatch(allProducts(response.data));
+        store.dispatch(setIsLoading(false))
     } catch (error) {
         console.error('Failed to fetch products:', error);
     }

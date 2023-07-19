@@ -18,16 +18,11 @@ export default function TeamMgmt () {
     const users = useSelector((state : RootState) => state.user.users);
     const newUser = useSelector((state : RootState) => state.user.newUser);
     const teamFormOpen = useSelector((state : RootState) => state.config.teamFormOpen);
-    const [isloading, setIsLoading] = useState(true);
+    const isloading = useSelector((state : any) => state.user.isLoading)
 
 
     useEffect(() => {
         getUsers()
-            .then((response) => {
-                setTimeout(() => {
-                    setIsLoading(false);
-                }, 1000);
-            });
     }, [newUser, users, selectedUser]);
 
     return(

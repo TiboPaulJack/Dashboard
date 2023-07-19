@@ -1,16 +1,17 @@
 import {axiosInstance} from "./axiosInstance";
 import {store} from "../redux/store";
-import {allCategories} from "../redux/reducers/product";
-import {setTasks} from "../redux/reducers/task";
-import {Task} from "../types";
+import {setIsLoading, setTasks} from "../redux/reducers/task";
+
 
 
 export const getTasks = async () => {
 
+
     try {
-        console.log('fetching tasks')
+        store.dispatch(setIsLoading(true))
         const response = await axiosInstance.get('/tasks');
-        store.dispatch(setTasks(response.data));
+        await store.dispatch(setTasks(response.data));
+        store.dispatch(setIsLoading(false))
     } catch (error) {
         console.log(error);
     }

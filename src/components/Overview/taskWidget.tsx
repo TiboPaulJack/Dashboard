@@ -7,26 +7,17 @@ import {Box, CircularProgress, Typography} from "@mui/material";
 import { DateCalendar } from '@mui/x-date-pickers';
 import CalendarWidget from './calendarWidget';
 import { useState } from 'react';
-
-
+import {useSelector} from "react-redux";
 
 
 
 export default function TaskWidget  () {
 
-	const [isloading, setIsLoading] = useState(true);
+	const isloading = useSelector((state : any) => state.task.isLoading)
+	const tasks = useSelector((state : any) => state.task.tasks)
 
-	useEffect(() => {
-		getTasks()
-			.then((response) => {
-				setTimeout(() => {
-					setIsLoading(false);
-				}, 1000);
-			});
 
-	}, []);
 
-	
 	
 		return (
 			<div className={"task-widget"}>

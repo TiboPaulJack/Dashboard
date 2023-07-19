@@ -12,6 +12,7 @@ export interface ProductState {
     quantityPerSize : Record<number, number>;
     filter : number;
     inventoryGroup : boolean;
+    isLoading : boolean,
 }
 
 const initialState: ProductState = {
@@ -57,6 +58,7 @@ const initialState: ProductState = {
     },
     filter: 0,
     inventoryGroup: false,
+    isLoading: false,
 };
 
 const ProductSlice = createSlice({
@@ -112,6 +114,9 @@ const ProductSlice = createSlice({
         setInventoryGroup(state, action: PayloadAction<boolean>) {
             state.inventoryGroup = action.payload;
         },
+        setIsLoading(state, action) {
+            state.isLoading = action.payload
+        }
 
 
     },
@@ -133,7 +138,10 @@ export const {
     clearRelatedProducts,
     setFilter,
     clearFilter,
-    setInventoryGroup
+    setInventoryGroup,
+    setIsLoading
+
+
 } = ProductSlice.actions;
 
 

@@ -10,8 +10,17 @@ import Tasks from "./Tasks/Tasks";
 import Profile from "./Profile/Profile";
 import Settings from "./Settings/Settings";
 import Overview from "./Overview/Overview";
+import {useEffect} from "react";
+import {getTasks} from "../api/task";
 
-const Dashboard = () => {
+export default function Dashboard () {
+
+
+useEffect(() => {
+    getTasks()
+}, [])
+
+
     return (
         <div className={"app"}>
             <Sidebar/>
@@ -33,4 +42,3 @@ const Dashboard = () => {
     );
 };
 
-export default Dashboard;

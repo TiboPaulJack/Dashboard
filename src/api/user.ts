@@ -1,13 +1,15 @@
 import { store } from '../redux/store';
-import { allUsers } from '../redux/reducers/user';
+import {allUsers, setIsLoading} from '../redux/reducers/user';
 import {axiosInstance} from "./axiosInstance";
 
 
 
 export const getUsers = async () => {
     try {
+        store.dispatch(setIsLoading(true))
         const response = await axiosInstance.get('/users');
-        store.dispatch(allUsers(response.data));
+        await store.dispatch(allUsers(response.data));
+        store.dispatch(setIsLoading(false))
     } catch (error) {
         console.error('Failed to fetch users:', error);
     }

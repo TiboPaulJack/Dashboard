@@ -4,7 +4,8 @@ import { User } from '../../types';
 export interface UserState {
     users: User[];
     selectedUser: User | null;
-    newUser: User
+    newUser: User,
+    isLoading : boolean,
 }
 
 const initialState: UserState = {
@@ -20,7 +21,9 @@ const initialState: UserState = {
         title: '',
         status: '',
         access: '',
-    }
+    },
+    isLoading : false,
+
 };
 
 
@@ -48,6 +51,9 @@ const userSlice = createSlice({
         },
         setSelectedUserById(state, action: PayloadAction<number>) {
             state.selectedUser = state.users.find((user) => user.id === action.payload);
+        },
+        setIsLoading(state, action) {
+            state.isLoading = action.payload;
         }
     },
 });
@@ -59,7 +65,11 @@ export const {
     setSelectedUser,
     clearSelectedUser,
     removeIdFromSelectedUser,
-    setSelectedUserById
+    setSelectedUserById,
+    setIsLoading,
+
+
+
 } = userSlice.actions;
 
 export default userSlice.reducer;
