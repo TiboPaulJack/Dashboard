@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Autocomplete from "@mui/material/Autocomplete";
 import {search} from "../../api/search";
 import {useNavigate} from "react-router-dom";
-import {setEditUserMode, setInventoryFocusOpen, setTeamFormOpen} from "../../redux/reducers/config";
+import {setEditUserMode, setInventoryFocusOpen, setSearchValue, setTeamFormOpen, setSearch} from "../../redux/reducers/config";
 import {setSelectedUser, setSelectedUserById} from "../../redux/reducers/user";
 import {getUsers} from "../../api/user";
 
@@ -19,21 +19,25 @@ export default function SearchBar() {
 
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
-	const [searchValue, setSearchValue] = useState<string>('');
 	const [searchResults, setSearchResults] = useState<any>([]);
 	const [key, setKey] = useState<string>("key");
 	const users = useSelector((state: any) => state.user.users);
+	const searchValue = useSelector((state: any) => state.config.search);
+
+	const handleInputChange = (event, value) => {
+		if (value !== '') handleSearch(value);
+	};
+
+	const handleSearch = async (value) => {
+		dispatch(setSearchValue(value));
+		const response = await search(value);
+		setSearchResults(response);
+	}
 
 	useEffect(() => {
-		setSearchResults([]);
-		setKey("anotherKeyMore")
-	}, [searchValue.length === 0]);
+		setKey(Math.random().toString(36).substring(7));
+	}, []);
 
-
-	const handleSearch = async (value: string) => {
-		const results = await search(value);
-		setSearchResults(results);
-	}
 
 	const handleClick = (source: string, id: number) => {
 		if(source === "user") {
@@ -59,8 +63,9 @@ export default function SearchBar() {
 				disableClearable
 				key={key}
 				onClose={() => {
-					setSearchValue('');
-					setSearchResults([]);
+					setKey(Math.random().toString(36).substring(7))
+					dispatch(setSearch([]));
+					dispatch(setSearchValue(''));
 				}}
 				renderOption={(props, option: Option) => (
 					<li {...props} onClick={() => handleClick(option.source, option.id)}>
@@ -68,11 +73,13 @@ export default function SearchBar() {
 					</li>
 				)}
 				getOptionLabel={(option: Option) => option.firstname + ' ' + option.lastname}
-				options={searchResults ? searchResults : (searchValue.length !== 0 ? [{firstname: "No results", lastname: "", source: "", id: 0}] : [])}
-				onInputChange={(event, newInputValue) => {
-					setSearchValue(newInputValue);
-					handleSearch(searchValue);
-				}}
+				options={
+					searchValue.length > 0
+						? (searchResults.length !== 0 ? searchResults : [])
+						: []
+				}
+
+				onInputChange={handleInputChange}
 				sx={{
 					width: '40%',
 					alignSelf: 'center',

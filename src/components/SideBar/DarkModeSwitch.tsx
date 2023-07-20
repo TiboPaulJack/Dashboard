@@ -15,7 +15,18 @@ export default function DarkModeSwitch () {
 		const nightMode = useSelector((state : any) => state.config.nightMode);
 		const [isChecked, setIsChecked] = useState(false);
 		const [isSmallScreen, setIsSmallScreen] = useState(false);
+		const [isSidebarAnimationEnded, setIsSidebarAnimationEnded] = useState(false);
 		const dispatch = useDispatch();
+
+		useEffect(() => {
+			if(isSidebarOpen) {
+				setTimeout(() => {
+					setIsSidebarAnimationEnded(true);
+				}, 300);
+			}else {
+				setIsSidebarAnimationEnded(false);
+			}
+		}, [isSidebarOpen]);
 
 
 		useEffect(() => {
@@ -44,8 +55,10 @@ export default function DarkModeSwitch () {
 
 		return (
 			<>
-				{!isSmallScreen ?
-					(isSidebarOpen ?
+				{!isSmallScreen
+					?
+						(isSidebarAnimationEnded
+						?
 						<Box sx={{display: 'flex', alignItems: 'center', m: 'auto auto 15px auto', justifySelf: 'flex-end'}}>
 
 							<WbSunny fontSize="small"/>
@@ -54,7 +67,7 @@ export default function DarkModeSwitch () {
 								id="checkbox"
 								checked={isChecked}
 								onChange={handleDarkModeChange}
-								sx={{mx: 1}}
+								sx={{mx: 1, animation:'fadeIn 0.4s linear'}}
 							/>
 							<NightsStay fontSize="small"/>
 						</Box>

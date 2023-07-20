@@ -131,7 +131,6 @@ export default function Form ()  {
         <div className={"productFormContainer"}>
             <div className={"productForm"}>
                 <Stack spacing={1}>
-                    <InputLabel>Product</InputLabel>
                     <TextField
                         label="Product Title"
                         variant="filled"

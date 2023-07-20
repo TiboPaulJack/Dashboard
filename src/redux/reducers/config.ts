@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import {darkTheme, lightTheme} from "../../muiStyles";
 
 export interface ConfigState {
     nightMode: boolean;
@@ -11,6 +10,7 @@ export interface ConfigState {
     searchResults: [];
     tasksFilter: string;
     isSidebarOpen : boolean,
+    search: string;
 }
 
 
@@ -26,6 +26,7 @@ const initialState: ConfigState = {
     searchResults: [],
     tasksFilter: 'pending',
     isSidebarOpen: false,
+    search: '',
 };
 
 const configSlice = createSlice({
@@ -65,6 +66,9 @@ const configSlice = createSlice({
         },
         setIsSidebarOpen(state, action) {
             state.isSidebarOpen = action.payload;
+        },
+        setSearchValue(state, action) {
+            state.search = action.payload;
         }
     },
 });
@@ -79,6 +83,7 @@ export const {
     setSearch,
     setTasksFilter,
     setIsSidebarOpen,
+    setSearchValue,
 
 
 } = configSlice.actions;
