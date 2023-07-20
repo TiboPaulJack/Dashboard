@@ -79,7 +79,7 @@ const buttonStyle = {
             <Typography
                 sx={{
                     letterSpacing : '5px',
-                    margin: 'auto auto 0 auto',
+                    margin: 'auto auto',
                     paddingTop : '20px',
                     color: nightMode ? 'white' : 'black',
                     fontSize: '25px',
