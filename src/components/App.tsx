@@ -20,8 +20,10 @@ export default function App() {
 
 
     useLayoutEffect(() => {
-        const storedTheme = localStorage.getItem('theme');
-        !storedTheme && localStorage.setItem('theme', 'dark');
+        let storedTheme = localStorage.getItem('theme');
+
+        if(storedTheme === null) storedTheme = 'dark';
+
         if (storedTheme === 'dark') {
             dispatch(setNightMode(true));
         } else {
