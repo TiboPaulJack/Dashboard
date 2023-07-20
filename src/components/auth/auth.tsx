@@ -94,7 +94,7 @@ const buttonStyle = {
                 className={"auth_form"}
             >
                 {!isLoading ?
-                    <Stack spacing={2} style={{height:'120px'}}>
+                    <Stack spacing={2} style={{height:'120px', width:'100%'}}>
                         {!isPasswordLost ?
                             <>
                                 <TextField
@@ -132,7 +132,7 @@ const buttonStyle = {
                         }
                     </Stack>
                     :
-                    <Stack style={{height: '120px'}}>
+                    <Stack style={{height: '120px', width:'100%'}}>
                         <CircularProgress style={{margin: 'auto', color: '#ADD0C0'}}/>
                     </Stack>
                 }
