@@ -13,8 +13,6 @@ import {clearInAddProducts, clearNewProduct, setInAddProducts} from "../../redux
 import {Product} from "../../types";
 import {createProduct} from "../../api/product";
 import Checkbox from '@mui/material/Checkbox';
-import {useEffect} from "react";
-import {setInventoryFocusOpen} from "../../redux/reducers/config";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 
@@ -94,7 +92,7 @@ export default function Recap() {
     return (
         <div className={"product_options"}>
             <TableContainer
-                sx={{width: '100%' }}
+                sx={{width: '100%' , overflow:'hidden'}}
             >
                 <Table>
                     <TableHead>

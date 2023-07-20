@@ -144,7 +144,7 @@
     }
         .task-widget__container-top{
             display: flex;
-            height: 45%;
+            height: 50%;
             max-height: 50%;
             width: 100%;
             box-shadow: var(--box-shadow);
@@ -158,7 +158,7 @@
 
         .task-widget__container-bottom{
             display: flex;
-            height: 55%;
+            height: 50%;
             box-sizing: border-box;
             border-radius: var(--border-radius);
             overflow: auto;

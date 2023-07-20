@@ -122,7 +122,7 @@ export default function Recap() {
     return (
         <div className={"product_options"}>
             <TableContainer
-                sx={{width: '100%' }}
+                sx={{width: '100%', overflow:'hidden' }}
             >
                 <Table>
                     <TableHead>
