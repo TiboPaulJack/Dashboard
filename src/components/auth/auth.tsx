@@ -7,6 +7,7 @@ import Paper from "@mui/material/Paper";
 import {useDispatch, useSelector} from "react-redux";
 import {AppDispatch, RootState} from "../../redux/store";
 import {logIn} from "../../redux/reducers/auth";
+import Typography from "@mui/material/Typography";
 
 
 interface LoginFormData {
@@ -20,11 +21,12 @@ export default function Auth () : JSX.Element  {
 const dispatch: AppDispatch = useDispatch();
 
 
-const navigate : NavigateFunction = useNavigate()
+const navigate : NavigateFunction = useNavigate();
+const nightMode = useSelector((state: RootState) => state.config.nightMode);
 const [formValues, setFormValues] = useState<LoginFormData>({
     username: 'demo',
     password: 'demodemodemo'
-})
+});
 
 const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const {name, value} = event.target;
@@ -49,7 +51,7 @@ const buttonStyle = {
 }
 
     return (
-    <div className="auth_page">
+        <div className="auth_page">
         <Paper className={'auth_container'}
             elevation={10}
             sx={{
@@ -61,7 +63,17 @@ const buttonStyle = {
                 backgroundColor: '#33373A'
             }}
         >
-            <h2 className={"auth_title"}>Login</h2>
+            <Typography
+                sx={{
+                    letterSpacing : '5px',
+                    margin: 'auto',
+                    paddingTop : '20px',
+                    color: nightMode ? 'white' : 'black',
+                    fontSize: '25px',
+                    fontFamily : 'var(--font-primary)',
+            }}
+            >Login
+            </Typography>
             <Stack
                 spacing={3}
                 padding={5}
