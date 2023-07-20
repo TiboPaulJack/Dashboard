@@ -21,13 +21,7 @@ export default function Tasks () : JSX.Element {
 
 
     useEffect(() => {
-        setIsLoading(true)
         getTasks()
-            .then((response) => {
-                setTimeout(() => {
-                    setIsLoading(false);
-                }, 1000);
-            });
         dispatch(setRefresh(false))
     }, [refresh === true]);
 
