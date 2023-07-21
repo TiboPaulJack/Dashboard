@@ -11,6 +11,7 @@ import Dashboard from "./Dashboard";
 import ErrorBoundary from './ErrorBoundary';
 import { StyledEngineProvider, ThemeProvider } from '@mui/material/styles';
 import {darkTheme, lightTheme} from "../muiStyles";
+import { Analytics } from '@vercel/analytics/react'
 
 export default function App() {
 
@@ -45,6 +46,7 @@ export default function App() {
             <ThemeProvider theme={theme}>
                 <BrowserRouter>
                     <ErrorBoundary>
+                        <Analytics />
                         <Routes>
                             {
                                 !loggedIn && <Route path="/*" element={<Auth />} />
