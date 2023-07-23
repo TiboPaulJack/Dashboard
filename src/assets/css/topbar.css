@@ -93,17 +93,19 @@
 
 @media (max-width: 400px) {
 
+    .topBar{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        min-height: 8vh;
+        box-shadow: var(--box-shadow);
+        border-radius: var(--border-radius);
+        background-color: var(--background-widget);
+    }
 
-.topBar{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-    min-height: 8vh;
-    box-shadow: var(--box-shadow);
-    border-radius: var(--border-radius);
-    background-color: var(--background-widget);
-}
-
+    .MuiAutocomplete-root .css-1i660d2-MuiAutocomplete-root{
+        width: 80%;
+    }
 
 }
