@@ -81,3 +81,29 @@
 .clock:hover{
     border: 1px #ffffff solid;
 }
+
+@media (max-width: 768px) {
+
+    .box-profile-top{
+        width: 20%;
+    }
+    
+}
+
+
+@media (max-width: 400px) {
+
+
+.topBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    min-height: 8vh;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    background-color: var(--background-widget);
+}
+
+
+}

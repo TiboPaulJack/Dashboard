@@ -81,9 +81,12 @@
 @media screen and (max-width: 768px) {
     .sidebar .blankSpace{
         display: none;
-
     }
 
+    .NavItem:hover{
+        background-color: initial;
+    }
+    }
 
 }
 
